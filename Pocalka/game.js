@@ -9,7 +9,6 @@ class Player {
         this.health = maxHealth;
         this.gun = gun;
         this.speed = speed;
-        this.zombie = zombie;
 
         this.gun.x = this.x + this.size/2;
         this.gun.y = this.y + this.size/2;
@@ -21,6 +20,10 @@ class Player {
     }
 
     draw(color) {
+        if(this.health > this.maxHealth) {
+            this.health = this.maxHealth;
+        }
+
         fillRect(this.x, this.y, this.size, this.size, color);
         
         fillRect(this.x, this.y - 15, this.size, 10, "#910000");
@@ -89,9 +92,7 @@ class Ammo {
 let p = new Player(windowSizeX/2 - 25, windowSizeY/2 - 25, 50, 100, new Gun(10, 5, 2500), 3);
 let zombies = [];
 
-for(let i = 0; i < 10; i++) {
-    zombies.push(new Player(randomInteger(0, windowSizeX), randomInteger(0, windowSizeY), 50, 20, new Gun(10, 5, 2500), 2));
-}
+spawnZombie();
 
 function update() {
     let forward = 0, down = 0;
@@ -101,6 +102,27 @@ function update() {
     if(Input.GetKey(KeyCode.D)) forward = 1;
     p.Move(forward, down);
     p.gun.update();
+
+    for(let i = 0; i < zombies.length; i++) {
+        zombies[i].gun.update();
+        let angle = findAngleBetweenTwoPoints(zombies[i].gun.x, zombies[i].gun.y, p.gun.x, p.gun.y) * 180/Math.PI;
+        zombies[i].Move(MoveForwardX(angle, 1), MoveForwardY(angle, 1));
+
+        if(zombies[i].health <= 0) {
+            zombies.splice(i, 1);
+            spawnZombie();
+            spawnZombie();
+            break;
+        }
+
+        for(let j = 0; j < p.gun.ammos.length; j++) {
+            if(areColliding(p.gun.ammos[j].x, p.gun.ammos[j].y, 20, 10,  zombies[i].x, zombies[i].y, zombies[i].size, zombies[i].size)) {
+                zombies[i].health -= p.gun.damage;
+                p.gun.ammos.splice(j, 1);
+                break;
+            }
+        }
+    }
 }
 
 function draw() {
@@ -109,7 +131,7 @@ function draw() {
     p.draw("#3160eb");
 
     for(let i = 0; i < zombies.length; i++) {
-        zombies[i].angle = findAngleBetweenTwoPoints(zombies[i].x, zombies[i].y, p.gun.x, p.gun.y) * 180/Math.PI;
+        zombies[i].gun.angle = findAngleBetweenTwoPoints(zombies[i].gun.x, zombies[i].gun.y, p.gun.x, p.gun.y) * 180/Math.PI;
         zombies[i].draw("#d43535");
     }
 }
@@ -142,4 +164,9 @@ function rotate3(angle, x, y, xs, ys) {
     context.translate(x + xs/2, y + ys/2);
     context.rotate(angle*Math.PI/180);
     context.translate(-x - xs/2, -y - ys/2);
+}
+
+function spawnZombie() {
+    zombies.push(new Player(randomInteger(0, 2) ? (randomInteger(0, windowSizeX/3) + windowSizeX) : (randomInteger(0, windowSizeX/3) - windowSizeX/3 - 25),
+                            randomInteger(0, 2) ? (randomInteger(0, windowSizeY/3) + windowSizeY) : (randomInteger(0, windowSizeY/3) - windowSizeY/3 - 25), 50, 20, new Gun(10, 5, 2500), 2));
 }
