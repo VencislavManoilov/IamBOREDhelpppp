@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Начало</title>
+
+    <link rel="stylesheet" type="text/css" href="./main.css"> 
+    <link rel="stylesheet" type="text/css" href="./css/home.css"> 
+</head>
+
+<body onload="init()">
+    <svg preserveAspectRatio="xMidYMid slice" viewBox="10 10 80 80" id="background"><defs><style>@keyframes rotate {0% {transform: rotate(0deg);}100% {transform: rotate(360deg);}}.out-top {animation: rotate 20s linear infinite;transform-origin: 13px 25px;}.in-top {animation: rotate 10s linear infinite;transform-origin: 13px 25px;}.out-bottom {animation: rotate 25s linear infinite;transform-origin: 84px 93px;}.in-bottom {animation: rotate 15s linear infinite;transform-origin: 84px 93px;}</style></defs><path fill="#9b5de5" class="out-top" d="M37-5C25.1-14.7,5.7-19.1-9.2-10-28.5,1.8-32.7,31.1-19.8,49c15.5,21.5,52.6,22,67.2,2.3C59.4,35,53.7,8.5,37-5Z"/><path fill="#f15bb5" class="in-top" d="M20.6,4.1C11.6,1.5-1.9,2.5-8,11.2-16.3,23.1-8.2,45.6,7.4,50S42.1,38.9,41,24.5C40.2,14.1,29.4,6.6,20.6,4.1Z"/><path fill="#00bbf9" class="out-bottom" d="M105.9,48.6c-12.4-8.2-29.3-4.8-39.4.8-23.4,12.8-37.7,51.9-19.1,74.1s63.9,15.3,76-5.6c7.6-13.3,1.8-31.1-2.3-43.8C117.6,63.3,114.7,54.3,105.9,48.6Z"/><path fill="#00f5d4" class="in-bottom" d="M102,67.1c-9.6-6.1-22-3.1-29.5,2-15.4,10.7-19.6,37.5-7.6,47.8s35.9,3.9,44.5-12.5C115.5,92.6,113.9,74.6,102,67.1Z"/></svg>
+    
+    <div id="navbar">
+        <span>Habit</span><p>p>Trackr</p>
+    </div>
+
+    <a id="logout" onclick="logout()"><svg width="40" height="40" viewBox="0 0 24 24" fill="none"><path d="M8.51428 20H4.51428C3.40971 20 2.51428 19.1046 2.51428 18V6C2.51428 4.89543 3.40971 4 4.51428 4H8.51428V6H4.51428V18H8.51428V20Z" fill="currentColor" /><path d="M13.8418 17.385L15.262 15.9768L11.3428 12.0242L20.4857 12.0242C21.038 12.0242 21.4857 11.5765 21.4857 11.0242C21.4857 10.4719 21.038 10.0242 20.4857 10.0242L11.3236 10.0242L15.304 6.0774L13.8958 4.6572L7.5049 10.9941L13.8418 17.385Z" fill="currentColor" /></svg></a>
+
+    <div id="all" style="position: absolute;">
+        <p id="error" style="display: none;"></p>
+    
+        <p id="welcome"></p>
+
+        <div id="quote"></div>
+    
+        <div id="habits"></div>
+    
+        <div id="add">
+            <input id="habit-text" type="text" placeholder="Въведи навик">
+            <input title="Дни до изтриването на навика" id="goal" type="number" min="1" value="21">
+            <button onclick="addHabit()">Добави</button>
+        </div>
+
+        <div id="preset"></div>
+    </div>
+</body>
+
+<script src="./cookies.js"></script>
+
+<script>
+    const xhr = new XMLHttpRequest();
+    let user = {};
+
+    function init() {
+        xhr.open("GET", "/user", true);
+        xhr.send();
+        xhr.onload = () => {
+            if(xhr.status === 200) {
+                user = JSON.parse(xhr.response);
+                formData(user);
+            } else if(xhr.status === 400 || xhr.response.error) {
+                let error = document.getElementById("error");
+                error.style.display = "inline";
+                error.innerHTML = xhr.response.error;
+            }
+
+            xhr.open("GET", "/quote", true);
+            xhr.send();
+            xhr.onload = () => {
+                const data = JSON.parse(xhr.response);
+                document.getElementById("quote").innerHTML += "<p>" + data.quote + "</p";
+                document.getElementById("quote").innerHTML += "<p id='author'>- " + data.author + "</p";
+            }
+        }
+
+        preset();
+    }
+
+    function formData(data) {
+        document.getElementById("welcome").innerHTML = "Здравей, " + data.name;
+        
+        document.getElementById("habits").innerHTML = "";
+        if (data.habits.length > 0) {
+            let daysDiv = document.createElement("div");
+            daysDiv.id = "days";
+            document.getElementById("habits").appendChild(daysDiv);
+
+            let currentDate = new Date();
+            currentDate.setDate(currentDate.getDate() - 7);
+            for (let i = 0; i < 7; i++) {
+                let dayElement = document.createElement("span");
+                dayElement.textContent = currentDate.getDate();
+                document.getElementById("days").appendChild(dayElement);
+                currentDate.setDate(currentDate.getDate() + 1);
+            }
+        }
+
+        checkboxes = {};
+
+        for(let i = 0; i < data.habits.length; i++) {
+            let days = "", num = 0, addUn = "";
+
+            const habitDiv = document.createElement('div');
+            habitDiv.classList.add('habit');
+            
+            const textDiv = document.createElement('div');
+            textDiv.classList.add('text');
+
+            const checkboxInput = document.createElement('input');
+            checkboxInput.type = 'checkbox';
+            checkboxInput.id = data.habits[i].id;
+            checkboxInput.checked = data.habits[i].check;
+            textDiv.appendChild(checkboxInput);
+            
+            const textSpan = document.createElement('a');
+            textSpan.textContent = data.habits[i].text;
+            textSpan.href = "/open?id=" + data.habits[i].id;
+            textDiv.appendChild(textSpan);
+
+            habitDiv.appendChild(textDiv);
+
+            const daysDiv = document.createElement('div');
+            daysDiv.classList.add('days');
+
+            if(data.habits[i].graph.length > 7) {
+                num = data.habits[i].graph.length - 8;
+            } else if(data.habits[i].graph.length < 7) {
+                num = -1;
+                for(let j = 0; j < 7 - data.habits[i].graph.length; j++) {
+                    addUn += "<span class='idk'>-</span>";
+                } 
+            } else {
+                num = -1;
+            }
+
+            if(addUn != "") {
+                days += addUn;
+            }
+
+            for(let j = num + 1; j < data.habits[i].graph.length; j++) {
+                days += data.habits[i].graph[j].check ? "<span class='yes'>✔</span>" : "<span class='no'>✘</span>";
+            }
+
+            daysDiv.innerHTML = days;
+
+            habitDiv.appendChild(daysDiv);
+            document.getElementById("habits").appendChild(habitDiv);
+
+            checkboxes[data.habits[i].id] = checkboxInput;
+            addEventListenerToCheckbox(data.habits[i].id);
+        }
+    }
+
+    let checkboxes = {};
+
+    function addEventListenerToCheckbox(id) {
+        checkboxes[id].addEventListener("input", () => {
+            if(checkboxes[id].checked) {
+                check(id);
+            } else {
+                uncheck(id);
+            }
+        });
+    }
+
+    function addHabit() {
+        const text = document.getElementById("habit-text").value;
+        const goal = parseInt(document.getElementById("goal").value);
+        
+        if(text && goal) {
+            fetch("/habit/create", {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8', },
+                body: new URLSearchParams({
+                    id: user.id,
+                    text: text,
+                    when: 1,
+                    goal: goal
+                })
+            })
+            .then((resp) => resp.json())
+            .then(function(response) {
+                if(response.error) {
+                    document.getElementById("error").innerHTML = response.error;
+                } else {
+                    user.habits = response;
+
+                    document.getElementById("habit-text").value = "";
+
+                    formData(user);
+                }
+                return response;
+            })
+        }
+    }
+
+    function check(id) {
+        fetch("/habit/check", {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8', },
+            body: new URLSearchParams({
+                id: user.id,
+                habitId: id,
+            })
+        })
+        .then((resp) => resp.json())
+        .then(function(response) {
+            if(response.error) {
+                document.getElementById("error").innerHTML = response.error;
+            } else {
+                user.habits = response;
+                formData(user);
+            }
+            return response;
+        })
+    }
+
+    function uncheck(id) {
+        fetch("/habit/uncheck", {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8', },
+            body: new URLSearchParams({
+                id: user.id,
+                habitId: id,
+            })
+        })
+        .then((resp) => resp.json())
+        .then(function(response) {
+            if(response.error) {
+                document.getElementById("error").innerHTML = response.error;
+            } else {
+                user.habits = response;
+                formData(user);
+            }
+            return response;
+        })
+    }
+
+    function deleteHabit(id) {
+        fetch("/habit/delete", {
+            method: 'DELETE',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8', },
+            body: new URLSearchParams({
+                id: user.id,
+                habitId: id,
+            })
+        })
+        .then((resp) => resp.json())
+        .then(function(response) {
+            if(response.error) {
+                let error = document.getElementById("error");
+                error.style.display = "inline";
+                error.innerHTML = response.error;
+            } else {
+                user.habits = response;
+                formData(user);
+            }
+            return response;
+        })
+    }
+
+    function logout() {
+        xhr.open("GET", "/auth/logout");
+        xhr.send();
+        xhr.onload = () => {
+            const response = JSON.parse(xhr.response);
+
+            if(response.success) {
+                deleteCookie("session");
+                document.location.href = "/";
+            }
+        }
+    }
+
+    function preset() {
+        const habits = [
+            {bad: "Успиване", good: ["Ставане по-рано"]},
+            {bad: "Мързелуване", good: ["Спорт", "Разходки", "Каране на колело"]},
+            {bad: "Използване на телефон", good: ["Четене на книга", "Разходка", "Разговор/виждане с познати"]},
+            {bad: "Неконтролируемо харчене", good: ["Ненадвишаване бюджета за деня"]},
+            {bad: "Липса на задължения", good: ["Изготвяне на план за деня", "Изпълнение на плана"]},
+            {bad: "Лоша комуникация", good: ["Повече усмихване", "Повече смеене", "Повече общуване"]},
+        ];
+
+        const presetObj = document.getElementById("preset");
+        presetObj.innerHTML += "<p>Избери и замени:</p>";
+
+        for(let i = 0; i < habits.length; i++) {
+            presetObj.innerHTML += "<p class='bad'>" + habits[i].bad + ":</p>";
+            for(let j = 0; j < habits[i].good.length; j++) {
+                presetObj.innerHTML += `<button class='good' onclick='setHabitTextValue("${habits[i].good[j]}")'>` + habits[i].good[j] + "</button>";
+            }
+        }
+    }
+
+    function open(id) {
+        console.log(id);
+    }
+
+    function setHabitTextValue(text) {
+        document.getElementById("habit-text").value = text;
+    }
+</script>
+
+</html>

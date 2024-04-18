@@ -1,0 +1,159 @@
+#navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.267);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+#title {
+    font-size: 2.2em;
+    margin: 0;
+    margin-left: 15px;
+}
+
+#title span {
+    color: #00f5d4;
+    font-size: 1.15em;
+}
+
+#home {
+    position: absolute;
+    top: 75px;
+    left: 15px;
+    font-size: 2.15em;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 15px;
+    background-color: rgba(0, 0, 0, 0.432);
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    text-align: center;
+    align-items: center;
+    transition: all .3s ease;
+}
+
+#home:hover {
+    background-color: #000000a6;
+    color: white;
+}
+
+#header {
+    font-size: 2em;
+    margin-bottom: 15px;
+    color: #00f5d4;
+    font-weight: 700;
+}
+
+#auth {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    width: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#auth form {
+    display: flex;
+    flex-direction: column;
+}
+
+#auth form label {
+    text-align: left;
+}
+
+#auth form input {
+    /* margin-bottom: 15px; */
+    width: 100%;
+}
+
+input {
+	appearance: none;
+    width: 70%;
+    font-weight: 600;
+	outline: none;
+	background-color: rgba(255, 255, 255, 0.267);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+	border-radius: .5em;
+	padding: .4em;
+	color: #000000;
+}
+
+#links {
+    /* font-size: 1.5em; */
+    display: flex;
+    justify-content: space-between;
+}
+
+#auth span {
+    margin-top: 25px;
+    font-size: 1.2em;
+    text-shadow: 0px 0px 3px black;
+}
+
+#auth span a {
+    color: #d0e7ff;
+}
+
+#auth span a:hover {
+    color: #a1cfff;
+}
+
+.button-51 {
+    background-color: transparent;
+    border: 1px solid #266DB6;
+    box-sizing: border-box;
+    color: #00132C;
+    font-family: "Avenir Next LT W01 Bold",sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    padding: 16px 23px;
+    position: relative;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button-51:hover,
+.button-51:active {
+    outline: 0;
+}
+
+.button-51:hover {
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.button-51:before {
+    background-color: #D5EDF6;
+    content: "";
+    height: calc(100% + 3px);
+    position: absolute;
+    right: -7px;
+    top: -9px;
+    transition: background-color 300ms ease-in;
+    width: 100%;
+    z-index: -1;
+}
+
+.button-51:hover:before {
+    background-color: #6DCFF6;
+}
+
+@media (min-width: 768px) {
+    .button-51 {
+        padding: 16px 32px;
+    }
+}
