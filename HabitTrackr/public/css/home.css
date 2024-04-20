@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
 
 #navbar {
@@ -50,13 +50,15 @@
     margin-right: auto;
     padding-left: 25px;
     padding-right: 25px;
+    min-height: 100vh;
     background-color: rgba(0, 0, 0, 0.342);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
+    min-height: 100%;
 }
 
 #welcome {
-    font-family: "Caveat", cursive;
+    font-family: "Shantell Sans", cursive;
     font-size: 2em;
     margin-bottom: 10px;
     text-align: center;
@@ -125,11 +127,11 @@
 }
 
 .yes {
-    color: #00f5d4;
+    color: #5bff29;
 }
 
 .no {
-    color: #f15bb5;
+    color: #ff0000;
 }
 
 .idk {
@@ -156,65 +158,112 @@
 }
 
 #add input:first-child {
-    width: 82%;
+    width: calc(87% - 10px);
+    border-radius: 10px 0 0 10px;
+    border: none;
+    padding: 5px;
 }
 
 #add input {
     width: 5%;
+    padding: 5px;
+    border-radius: 0 10px 10px 0;
+    border: none;
+}
+
+#add input[type=number] {
+    transform: translate(-4px, 0);
+    border-left: 2px solid black;
+    background-color: #e4e4e4;
 }
 
 #add button {
-    width: 9%;
+    width: 4%;
+    padding: 0;
+    background: none;
+    border: none;
+    transform: translate(0, 7px) scale(1.25);
+    color: white;
+    transition: all .3s ease;
+}
+
+#add button:hover {
+    transform: translate(0, 7px) scale(1.5);
+    text-shadow: 0 0 4px black;
 }
 
 #preset p:first-child{
     font-size: 2em;
     margin-bottom: 0;
-    font-family: "Caveat", cursive;
+    font-family: "Shantell Sans", cursive;
 }
 
 #preset p {
     margin: 0;
     margin-bottom: 4px;
-    text-shadow: 2px 2px 3px rgb(0, 0, 0);
+    font-weight: 400;
+    text-shadow: 0px 0px 4px rgb(0, 0, 0);
 }
 
 #preset button {
     margin-bottom: 15px;
+    font-weight: 400;
 }
 
 .good {
     border: 1px solid black;
+    font-family: "Shantell Sans", Arial, sans-serif;
+    font-weight: 300;
+    font-size: 21em;
     border-radius: 20px;
-    background: none;
     color: #00f5d4;
+    background-color: #444;
     font-weight: 700;
     font-size: 1em;
     margin-right: 16px;
     padding: 3px 10px;
+    transition: all .3s ease;
 }
 
 .good:hover {
-    filter: drop-shadow(2px 2px 1px black);
     transform: translate(-2px, -2px);
+    box-shadow: 2px 2px 3px black;
+}
+
+.good:active {
+    transform: translate(0px, 0px);
+    box-shadow: none;
 }
 
 .bad {
-    color: #f15bb5;
+    color: #ffffff;
     font-weight: 700;
 }
 
 #quote {
-    max-width: 600px;
-    background: rgba(255, 0, 0, 0.4);
-    background: linear-gradient(135deg, rgba(255, 0, 0, 0.4) 0%, rgba(0, 21, 255, 0.4) 100%);
-    padding: 16px 15px;
-    border-radius: 15px;
-    border: 1px solid black;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 30px;
-    font-family: "Lora", serif;
+    background-color: transparent;
+    border: 2px solid #266DB6;
+    box-sizing: border-box;
+    color: #00132C;
+    font-family: "Avenir Next LT W01 Bold",sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    padding: 16px 23px;
+    margin: 20px 0;
+    position: relative;
+}
+
+#quote:before {
+    background-color: #D5EDF6;
+    content: "";
+    height: calc(100% + 3px);
+    position: absolute;
+    right: -7px;
+    top: -9px;
+    transition: background-color 300ms ease-in;
+    width: 100%;
+    z-index: -1;
 }
 
 #author {
