@@ -1,37 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
 
-#navbar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    display: none;
-    flex-direction: row;
-    justify-content: space-between;
-    background-color: rgba(0, 0, 0, 0.267);
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-}
-
-#navbar span {
-    color: #00f5d4;
-    font-size: 1.15em;
-}
-
-#navbar p {
-    font-size: 2.3em;
-    margin: 0;
-    margin-left: 15px;
-}
-
 #logout {
     position: fixed;
     bottom: 0;
     left: 0;
-    margin-left: 17px;
+    margin-left: 20px;
     margin-bottom: 10px;
     color: rgb(255, 82, 82);
+    /* transition: all .3s ease; */
 }
 
 #logout:hover {
@@ -51,10 +28,9 @@
     padding-left: 25px;
     padding-right: 25px;
     min-height: 100vh;
-    background-color: rgba(0, 0, 0, 0.342);
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
+    background-color: rgba(0, 35, 99, 0.342);
     min-height: 100%;
+    z-index: -2;
 }
 
 #welcome {
@@ -62,8 +38,14 @@
     font-size: 2em;
     margin-bottom: 10px;
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.692);
+    background-color: rgba(0, 0, 0, 0.418);
     border-radius: 15px;
+    color: white;
+    font-weight: 600;
+}
+
+#welcome span {
+    color: #D5EDF6;
 }
 
 #habits {
@@ -71,22 +53,37 @@
     align-items: center;
 }
 
-.habit {
+.habit, .habit-big {
     width: 700px;
     display: flex;
     flex-direction: row;
     justify-content: end;
     border-top: 2px solid black;
     min-height: 50px;
-    align-items: center;
     transition: 0.25s;
+    cursor: pointer;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
-.habit:last-child {
+.habit {
+    align-items: center;
+}
+
+.habit-big {
+    align-items: baseline;
+}
+
+.habit:last-child, .habit-big:last-child {
     border-bottom: 2px solid black;
 }
 
-.habit:hover {
+.habit:hover, .habit-big {
     background-color: rgba(0, 0, 0, 0.267);
 }
 
@@ -94,17 +91,19 @@
     width: 400px;
 }
 
-.habit .text a {
+.text-big {
+    width: 400px;
+    height: 184px;
+}
+
+.habit-big .text-big {
+    align-items: end;
+}
+
+.habit .text a, .habit-big .text-big a {
     font-weight: 500;
     color: white;
     transition: all .3s ease-out;
-    text-decoration-color: #f15bb5;
-}
-
-.habit a:hover {
-    text-decoration-line: underline;
-    text-decoration-thickness: 2px;
-    text-decoration-color: #00f5d4;
 }
 
 .days {
@@ -122,10 +121,6 @@
     text-align: center;
 }
 
-.yes .no {
-    text-shadow: 1px 1px 1px black;
-}
-
 .yes {
     color: #5bff29;
 }
@@ -139,16 +134,74 @@
     font-weight: 700;
 }
 
-#days {
+#days, #days-big {
     display: flex;
     flex-direction: row;
     justify-content: end;
+    color: white;
+}
+
+#days {
     gap: 15px;
+}
+
+#days-big {
+    gap: 30.5px;
+    width: calc(100% - 22px);
 }
 
 #days span {
     width: 30px;
     text-align: center;
+}
+
+.days-big {
+    width: 300px;
+}
+
+.day-big {
+    content: "";
+    display: inline-block;
+    background-color: rgb(154, 154, 154);
+    border-radius: 15px;
+    margin: 3px 6px;
+    font-size: 15px;
+    padding: 0;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    align-items: center;
+}
+
+.day-big p {
+    display: grid;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    align-items: center;
+    height: 100%;
+    transform: translate(0, 1px);
+}
+
+.lastMonth, .nextMonth {
+    background-color: rgba(83, 83, 83, 0.579);
+}
+
+.futureThisMonth {
+    background: none;
+    /* border: 2px solid grey; */
+}
+
+.not-done p, .done p {
+    transform: translate(0px, .75px);
+}
+
+.not-done {
+    background-color: rgb(255, 147, 147);
+}
+
+.done {
+    background-color: #92ff92;
 }
 
 #add {
@@ -196,13 +249,14 @@
     font-size: 2em;
     margin-bottom: 0;
     font-family: "Shantell Sans", cursive;
+    color: white;
+    font-weight: 400;
 }
 
 #preset p {
     margin: 0;
     margin-bottom: 4px;
-    font-weight: 400;
-    text-shadow: 0px 0px 4px rgb(0, 0, 0);
+    font-weight: 600;
 }
 
 #preset button {
@@ -216,7 +270,7 @@
     font-weight: 300;
     font-size: 21em;
     border-radius: 20px;
-    color: #00f5d4;
+    color: #92ff92;
     background-color: #444;
     font-weight: 700;
     font-size: 1em;
@@ -268,4 +322,31 @@
 
 #author {
     text-align: end;
+}
+
+.percent {
+    width: fit-content;
+    margin: 10px;
+    margin-left: 15px;
+    color: white;
+}
+
+.delete {
+    width: fit-content;
+    color: rgb(196, 0, 0);
+    border: none;
+    border-radius: 20px;
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-left: 15px;
+    transform: translateY(3px);
+    background-color: rgb(255, 185, 185);
+    transition: all .3s ease;
+}
+
+.delete:hover {
+    background-color: rgb(255, 96, 96);
+    color: red;
+    transform: translate(0px, -5px) scale(1.2);
+    box-shadow: 0px 3px 5px rgb(124, 0, 0);
 }

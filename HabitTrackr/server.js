@@ -81,14 +81,10 @@ app.get("/quote", (req, res) => {
     res.status(200).json(quotes[random(0, quotes.length)]);
 })
 
-app.get("/open", (req, res) => {
-    res.status(200).sendFile(path.join(__dirname, "public", "habit.html"));
-})
-
 function resetHabits() {
     users.forEach(user => {
         user.habits.forEach(habit => {
-            habit.graph.push({check: habit.check, day: new Date(new Date().setDate(new Date() - 1)).toLocaleDateString()});
+            habit.graph.push({check: habit.check, day: new Date(new Date().setDate(new Date().getDate() - 1)).toLocaleDateString()});
             
             if(habit.check) {
                 habit.check = false;

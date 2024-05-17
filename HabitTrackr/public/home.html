@@ -11,15 +11,10 @@
     <link rel="stylesheet" type="text/css" href="./css/home.css">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body onload="init()">
-    <svg preserveAspectRatio="xMidYMid slice" viewBox="10 10 80 80" id="background"><defs><style>@keyframes rotate {0% {transform: rotate(0deg);}100% {transform: rotate(360deg);}}.out-top {animation: rotate 20s linear infinite;transform-origin: 13px 25px;}.in-top {animation: rotate 10s linear infinite;transform-origin: 13px 25px;}.out-bottom {animation: rotate 25s linear infinite;transform-origin: 84px 93px;}.in-bottom {animation: rotate 15s linear infinite;transform-origin: 84px 93px;}</style></defs><path fill="#9b5de5" class="out-top" d="M37-5C25.1-14.7,5.7-19.1-9.2-10-28.5,1.8-32.7,31.1-19.8,49c15.5,21.5,52.6,22,67.2,2.3C59.4,35,53.7,8.5,37-5Z"/><path fill="#f15bb5" class="in-top" d="M20.6,4.1C11.6,1.5-1.9,2.5-8,11.2-16.3,23.1-8.2,45.6,7.4,50S42.1,38.9,41,24.5C40.2,14.1,29.4,6.6,20.6,4.1Z"/><path fill="#00bbf9" class="out-bottom" d="M105.9,48.6c-12.4-8.2-29.3-4.8-39.4.8-23.4,12.8-37.7,51.9-19.1,74.1s63.9,15.3,76-5.6c7.6-13.3,1.8-31.1-2.3-43.8C117.6,63.3,114.7,54.3,105.9,48.6Z"/><path fill="#00f5d4" class="in-bottom" d="M102,67.1c-9.6-6.1-22-3.1-29.5,2-15.4,10.7-19.6,37.5-7.6,47.8s35.9,3.9,44.5-12.5C115.5,92.6,113.9,74.6,102,67.1Z"/></svg>
-    
-    <div id="navbar">
-        <span>Habit</span><p>p>Trackr</p>
-    </div>
-
     <a id="logout" onclick="logout()"><svg width="40" height="40" viewBox="0 0 24 24" fill="none"><path d="M8.51428 20H4.51428C3.40971 20 2.51428 19.1046 2.51428 18V6C2.51428 4.89543 3.40971 4 4.51428 4H8.51428V6H4.51428V18H8.51428V20Z" fill="currentColor" /><path d="M13.8418 17.385L15.262 15.9768L11.3428 12.0242L20.4857 12.0242C21.038 12.0242 21.4857 11.5765 21.4857 11.0242C21.4857 10.4719 21.038 10.0242 20.4857 10.0242L11.3236 10.0242L15.304 6.0774L13.8958 4.6572L7.5049 10.9941L13.8418 17.385Z" fill="currentColor" /></svg></a>
 
     <div id="all" style="position: absolute;">
@@ -46,6 +41,7 @@
 <script>
     const xhr = new XMLHttpRequest();
     let user = {};
+    let size = [];
 
     function init() {
         xhr.open("GET", "/user", true);
@@ -73,7 +69,7 @@
     }
 
     function formData(data) {
-        document.getElementById("welcome").innerHTML = "Здравей, " + data.name;
+        document.getElementById("welcome").innerHTML = "Здравей, <span>" + data.name + "</span>";
         
         document.getElementById("habits").innerHTML = "";
         if (data.habits.length > 0) {
@@ -96,8 +92,12 @@
         for(let i = 0; i < data.habits.length; i++) {
             let days = "", num = 0, addUn = "";
 
+            size.push({id: data.habits[i].id, big: false});
+
             const habitDiv = document.createElement('div');
             habitDiv.classList.add('habit');
+            habitDiv.id = data.habits[i].id;
+            habitDiv.onclick = () => {expand(data.habits[i].id)};
             
             const textDiv = document.createElement('div');
             textDiv.classList.add('text');
@@ -110,7 +110,7 @@
             
             const textSpan = document.createElement('a');
             textSpan.textContent = data.habits[i].text;
-            textSpan.href = "/open?id=" + data.habits[i].id;
+            // textSpan.href = "/open?id=" + data.habits[i].id;
             textDiv.appendChild(textSpan);
 
             habitDiv.appendChild(textDiv);
@@ -118,23 +118,20 @@
             const daysDiv = document.createElement('div');
             daysDiv.classList.add('days');
 
-            if(data.habits[i].graph.length > 7) {
-                num = data.habits[i].graph.length - 8;
-            } else if(data.habits[i].graph.length < 7) {
-                num = -1;
-                for(let j = 0; j < 7 - data.habits[i].graph.length; j++) {
-                    addUn += "<span class='idk'>-</span>";
-                } 
-            } else {
-                num = -1;
-            }
+            for(let j = 0; j < 7; j++) {
+                let date = new Date(`${new Date().getMonth() + 1}/${new Date().getDate() - 7 + j}/${new Date().getFullYear()}`);
+                let count = 0;
+                for(let k = 0; k < data.habits[i].graph.length; k++) {
+                    if(date.getDate() == new Date(data.habits[i].graph[k].day).getDate() && date.getMonth() == new Date(data.habits[i].graph[k].day).getMonth()) {
+                        days += data.habits[i].graph[k].check ? "<span class='yes'>✔</span>" : "<span class='no'>✘</span>";
+                        count++;
+                        break;
+                    }
+                }
 
-            if(addUn != "") {
-                days += addUn;
-            }
-
-            for(let j = num + 1; j < data.habits[i].graph.length; j++) {
-                days += data.habits[i].graph[j].check ? "<span class='yes'>✔</span>" : "<span class='no'>✘</span>";
+                if(count == 0) {
+                    days += "<span class='idk'>-</span>";
+                }
             }
 
             daysDiv.innerHTML = days;
@@ -157,6 +154,123 @@
                 uncheck(id);
             }
         });
+    }
+
+    function expand(id) {
+        expandHabit(id, !size.find(h => h.id === id).big, user.habits.find(h => h.id === id));
+    }
+
+    function expandHabit(id, big, data) {
+        if(big) {
+            size.find(h => h.id === id).big = true;
+
+            let currentDate = new Date();
+            let firstDayOfTheMonth = new Date((currentDate.getMonth() + 1) + "/1/" + currentDate.getFullYear());
+            let lastDayOfTheMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0);
+
+            document.getElementById("days").innerHTML = "<span>П</span><span>В</span><span>С</span><span>Ч</span><span>П</span><span>С</span><span>Н</span>"
+
+            document.getElementById(id).classList = ["habit-big"];
+            document.getElementById(id).firstChild.classList = ["text-big"];
+            document.getElementById(id).lastChild.classList = ["days-big"];
+            document.getElementById("days").id = "days-big";
+
+            let percent = document.createElement("p");
+            percent.innerText = "Успеваемост: " + Math.floor((data.streak / data.goal) * 1000)/10 + "%";
+            // percent.innerText = "Успеваемост: 46.6%";
+            percent.classList.add("percent");
+            document.getElementById(id).firstChild.appendChild(percent);
+
+            let deleteButton = document.createElement("button");
+            deleteButton.classList.add("delete");
+            deleteButton.innerHTML = "<i class='fa fa-trash-o'></i>";
+            deleteButton.onclick = () => {deleteHabit(id)};
+            document.getElementById(id).firstChild.appendChild(deleteButton);
+
+            let graph = document.getElementById(id).lastChild;
+            graph.innerHTML = "";
+            
+            for(let i = firstDayOfTheMonth.getDay() - 1; i > 0 ; i--) {
+                let daysElement = document.createElement("div");
+                daysElement.classList.add("day-big");
+                daysElement.classList.add("lastMonth");
+                let date = new Date().setDate(firstDayOfTheMonth.getDate() - i);
+                daysElement.innerHTML = "<p>" + new Date(currentDate.getFullYear(), currentDate.getMonth(), firstDayOfTheMonth.getDate() - i).getDate() + "</p>";
+                graph.appendChild(daysElement);
+            }
+
+            for(let i = 0; i < currentDate.getDate(); i++) {
+                let daysElement = document.createElement("div");
+                daysElement.classList.add("day-big");
+                
+                let date = new Date(currentDate.getFullYear(), currentDate.getMonth(), firstDayOfTheMonth.getDate() + i);
+
+                for(let j = 0; j < data.graph.length; j++) {
+                    if(date.getDate() == new Date(data.graph[j].day).getDate() && date.getMonth() == new Date(data.graph[j].day).getMonth()) {
+                        daysElement.classList.add(data.graph[j].check ? "done" : "not-done");
+                        j = data.graph.length;
+                    }
+                }
+
+                daysElement.innerHTML = "<p>" + date.getDate() + "</p>";
+                graph.appendChild(daysElement);
+            }
+
+            for(let i = 1; i <= lastDayOfTheMonth.getDate() - currentDate.getDate(); i++) {
+                let daysElement = document.createElement("div");
+                daysElement.classList.add("day-big");
+                daysElement.classList.add("futureThisMonth");
+                daysElement.innerHTML = "<p>" + new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate() + i).getDate() + "</p>";
+                graph.appendChild(daysElement);
+            }
+
+            for(let i = 1; i < 8 - lastDayOfTheMonth.getDay(); i++) {
+                let daysElement = document.createElement("div");
+                daysElement.classList.add("day-big");
+                daysElement.classList.add("nextMonth");
+                let date = new Date().setDate(lastDayOfTheMonth.getDate() + i);
+                daysElement.innerHTML = "<p>" + new Date(currentDate.getFullYear(), currentDate.getMonth(), lastDayOfTheMonth.getDate() + i).getDate() + "</p>";
+                graph.appendChild(daysElement);
+            }
+        } else {
+            size.find(h => h.id === id).big = false;
+
+            document.getElementById(id).classList = ["habit"];
+            document.getElementById(id).firstChild.classList = ["text"];
+            document.getElementById(id).lastChild.classList = ["days"];
+            document.getElementById("days-big").id = "days";
+
+            let currentDate = new Date();
+            currentDate.setDate(currentDate.getDate() - 7);
+            document.getElementById("days").innerHTML = "";
+            for(let i = 0; i < 7; i++) {
+                let dayElement = document.createElement("span");
+                dayElement.textContent = currentDate.getDate();
+                document.getElementById("days").appendChild(dayElement);
+                currentDate.setDate(currentDate.getDate() + 1);
+            }
+
+            let days = "";
+            for(let j = 0; j < 7; j++) {
+                let date = new Date(`${new Date().getMonth() + 1}/${new Date().getDate() - 7 + j}/${new Date().getFullYear()}`);
+                let count = 0;
+                for(let k = 0; k < data.graph.length; k++) {
+                    if(date.getDate() == new Date(data.graph[k].day).getDate() && date.getMonth() == new Date(data.graph[k].day).getMonth()) {
+                        days += data.graph[k].check ? "<span class='yes'>✔</span>" : "<span class='no'>✘</span>";
+                        count++;
+                        break;
+                    }
+                }
+
+                if(count == 0) {
+                    days += "<span class='idk'>-</span>";
+                }
+            }
+            
+            document.getElementById(id).lastChild.innerHTML = days;
+            document.getElementById(id).firstChild.removeChild(document.getElementById(id).firstChild.lastChild);
+            document.getElementById(id).firstChild.removeChild(document.getElementById(id).firstChild.lastChild);
+        }
     }
 
     function addHabit() {
@@ -205,7 +319,6 @@
                 document.getElementById("error").innerHTML = response.error;
             } else {
                 user.habits = response;
-                formData(user);
             }
             return response;
         })
@@ -287,10 +400,6 @@
                 presetObj.innerHTML += `<button class='good' onclick='setHabitTextValue("${habits[i].good[j]}")'>` + habits[i].good[j] + "</button>";
             }
         }
-    }
-
-    function open(id) {
-        console.log(id);
     }
 
     function setHabitTextValue(text) {
