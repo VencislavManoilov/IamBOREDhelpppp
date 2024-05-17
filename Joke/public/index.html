@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Put a smile on your face</title>
+</head>
+<body onload="init()">
+    <div id="joke"></div>
+
+    <noscript>Your browser doesn't support the website!</noscript>
+
+    <script>
+        const xhr = new XMLHttpRequest();
+
+        function init() {
+            xhr.open("GET", "/joke", true);
+            xhr.send();
+            xhr.onload = () => {
+                if(xhr.status === 200) {
+                    document.getElementById("joke").innerHTML = JSON.parse(xhr.response)[0].joke;
+                } else {
+                    console.log(xhr.response);
+                }
+            }
+        }
+    </script>
+</body>
+</html>

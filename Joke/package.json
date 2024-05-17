@@ -1,0 +1,18 @@
+{
+  "name": "joke",
+  "version": "1.0.0",
+  "description": "This is an website that can put a smile on your face",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "Ventsislav Manoilov",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "nodemon": "^3.1.0",
+    "path": "^0.12.7",
+    "request": "^2.88.2"
+  }
+}
