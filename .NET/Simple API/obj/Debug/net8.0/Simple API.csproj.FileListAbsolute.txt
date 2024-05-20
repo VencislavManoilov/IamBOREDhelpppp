@@ -1,0 +1,34 @@
+C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Simple API\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Simple API\bin\Debug\net8.0\appsettings.json
+C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Simple API\bin\Debug\net8.0\Simple API.exe
+C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Simple API\bin\Debug\net8.0\Simple API.deps.json
+C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Simple API\bin\Debug\net8.0\Simple API.runtimeconfig.json
+C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Simple API\bin\Debug\net8.0\Simple API.dll
+C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Simple API\bin\Debug\net8.0\Simple API.pdb
+C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Simple API\bin\Debug\net8.0\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Simple API\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Simple API\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Simple API\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Simple API\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Simple API\obj\Debug\net8.0\Simple API.csproj.AssemblyReference.cache
+C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Simple API\obj\Debug\net8.0\Simple API.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Simple API\obj\Debug\net8.0\Simple API.AssemblyInfoInputs.cache
+C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Simple API\obj\Debug\net8.0\Simple API.AssemblyInfo.cs
+C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Simple API\obj\Debug\net8.0\Simple API.csproj.CoreCompileInputs.cache
+C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Simple API\obj\Debug\net8.0\Simple API.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Simple API\obj\Debug\net8.0\Simple API.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Simple API\obj\Debug\net8.0\Simple API.sourcelink.json
+C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Simple API\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Simple API\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Simple API\obj\Debug\net8.0\staticwebassets\msbuild.Simple API.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Simple API\obj\Debug\net8.0\staticwebassets\msbuild.build.Simple API.props
+C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Simple API\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Simple API.props
+C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Simple API\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Simple API.props
+C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Simple API\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Simple API\obj\Debug\net8.0\scopedcss\bundle\Simple API.styles.css
+C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Simple API\obj\Debug\net8.0\Simple API.csproj.Up2Date
+C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Simple API\obj\Debug\net8.0\Simple API.dll
+C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Simple API\obj\Debug\net8.0\refint\Simple API.dll
+C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Simple API\obj\Debug\net8.0\Simple API.pdb
+C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Simple API\obj\Debug\net8.0\Simple API.genruntimeconfig.cache
+C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Simple API\obj\Debug\net8.0\ref\Simple API.dll
