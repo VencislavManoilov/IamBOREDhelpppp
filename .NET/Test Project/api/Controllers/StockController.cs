@@ -6,6 +6,7 @@ using api.Data;
 using Microsoft.AspNetCore.Mvc;
 using api.Mappers;
 using api.Dtos.Stocks;
+using api.Dtos.Stock;
 
 namespace api.Controllers
 {
@@ -42,6 +43,27 @@ namespace api.Controllers
             _context.Stocks.Add(stockModel);
             _context.SaveChanges();
             return CreatedAtAction(nameof(GetById), new { id = stockModel.Id }, stockModel.ToStockDto());
+        }
+
+        [HttpPut]
+        [Route("{id}")]
+        public IActionResult Update([FromRoute] int id, [FromBody] UpdateStockRequestDto updateDto) {
+            var stockModel = _context.Stocks.FirstOrDefault(x => x.Id == id);
+
+            if(stockModel == null) {
+                return NotFound();
+            }
+
+            stockModel.Symbol = updateDto.Symbol;
+            stockModel.CompanyName = updateDto.CompanyName;
+            stockModel.Purchase = updateDto.Purchase;
+            stockModel.LastDiv = updateDto.LastDiv;
+            stockModel.Industry = updateDto.Industry;
+            stockModel.MarketCap = updateDto.MarketCap;
+
+            _context.SaveChanges();
+
+            return Ok(stockModel.ToStockDto());
         }
     }
 }
