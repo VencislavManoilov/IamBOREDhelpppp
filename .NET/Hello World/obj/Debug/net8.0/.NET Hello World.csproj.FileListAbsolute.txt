@@ -28,3 +28,18 @@ C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Hello World\.NET Hel
 C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Hello World\.NET Hello World\obj\Debug\net8.0\.NET Hello World.pdb
 C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Hello World\.NET Hello World\obj\Debug\net8.0\.NET Hello World.genruntimeconfig.cache
 C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Hello World\.NET Hello World\obj\Debug\net8.0\ref\.NET Hello World.dll
+C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Hello World\bin\Debug\net8.0\.NET Hello World.exe
+C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Hello World\bin\Debug\net8.0\.NET Hello World.deps.json
+C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Hello World\bin\Debug\net8.0\.NET Hello World.runtimeconfig.json
+C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Hello World\bin\Debug\net8.0\.NET Hello World.dll
+C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Hello World\bin\Debug\net8.0\.NET Hello World.pdb
+C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Hello World\obj\Debug\net8.0\.NET Hello World.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Hello World\obj\Debug\net8.0\.NET Hello World.AssemblyInfoInputs.cache
+C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Hello World\obj\Debug\net8.0\.NET Hello World.AssemblyInfo.cs
+C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Hello World\obj\Debug\net8.0\.NET Hello World.csproj.CoreCompileInputs.cache
+C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Hello World\obj\Debug\net8.0\.NET Hello World.sourcelink.json
+C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Hello World\obj\Debug\net8.0\.NET Hello World.dll
+C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Hello World\obj\Debug\net8.0\refint\.NET Hello World.dll
+C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Hello World\obj\Debug\net8.0\.NET Hello World.pdb
+C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Hello World\obj\Debug\net8.0\.NET Hello World.genruntimeconfig.cache
+C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Hello World\obj\Debug\net8.0\ref\.NET Hello World.dll

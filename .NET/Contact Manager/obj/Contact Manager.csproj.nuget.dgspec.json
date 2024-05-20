@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vmano\\Documents\\Programming\\I am bored Helppp\\.NET\\Contact Manager\\Contact Manager\\Contact Manager.csproj": {}
+    "C:\\Users\\vmano\\Documents\\Programming\\I am bored Helppp\\.NET\\Contact Manager\\Contact Manager.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vmano\\Documents\\Programming\\I am bored Helppp\\.NET\\Contact Manager\\Contact Manager\\Contact Manager.csproj": {
+    "C:\\Users\\vmano\\Documents\\Programming\\I am bored Helppp\\.NET\\Contact Manager\\Contact Manager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vmano\\Documents\\Programming\\I am bored Helppp\\.NET\\Contact Manager\\Contact Manager\\Contact Manager.csproj",
+        "projectUniqueName": "C:\\Users\\vmano\\Documents\\Programming\\I am bored Helppp\\.NET\\Contact Manager\\Contact Manager.csproj",
         "projectName": "Contact Manager",
-        "projectPath": "C:\\Users\\vmano\\Documents\\Programming\\I am bored Helppp\\.NET\\Contact Manager\\Contact Manager\\Contact Manager.csproj",
+        "projectPath": "C:\\Users\\vmano\\Documents\\Programming\\I am bored Helppp\\.NET\\Contact Manager\\Contact Manager.csproj",
         "packagesPath": "C:\\Users\\vmano\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vmano\\Documents\\Programming\\I am bored Helppp\\.NET\\Contact Manager\\Contact Manager\\obj\\",
+        "outputPath": "C:\\Users\\vmano\\Documents\\Programming\\I am bored Helppp\\.NET\\Contact Manager\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\vmano\\AppData\\Roaming\\NuGet\\NuGet.Config",

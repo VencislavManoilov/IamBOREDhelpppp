@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vmano\\Documents\\Programming\\I am bored Helppp\\.NET\\Hello World\\.NET Hello World\\.NET Hello World.csproj": {}
+    "C:\\Users\\vmano\\Documents\\Programming\\I am bored Helppp\\.NET\\Hello World\\.NET Hello World.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vmano\\Documents\\Programming\\I am bored Helppp\\.NET\\Hello World\\.NET Hello World\\.NET Hello World.csproj": {
+    "C:\\Users\\vmano\\Documents\\Programming\\I am bored Helppp\\.NET\\Hello World\\.NET Hello World.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vmano\\Documents\\Programming\\I am bored Helppp\\.NET\\Hello World\\.NET Hello World\\.NET Hello World.csproj",
+        "projectUniqueName": "C:\\Users\\vmano\\Documents\\Programming\\I am bored Helppp\\.NET\\Hello World\\.NET Hello World.csproj",
         "projectName": ".NET Hello World",
-        "projectPath": "C:\\Users\\vmano\\Documents\\Programming\\I am bored Helppp\\.NET\\Hello World\\.NET Hello World\\.NET Hello World.csproj",
+        "projectPath": "C:\\Users\\vmano\\Documents\\Programming\\I am bored Helppp\\.NET\\Hello World\\.NET Hello World.csproj",
         "packagesPath": "C:\\Users\\vmano\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vmano\\Documents\\Programming\\I am bored Helppp\\.NET\\Hello World\\.NET Hello World\\obj\\",
+        "outputPath": "C:\\Users\\vmano\\Documents\\Programming\\I am bored Helppp\\.NET\\Hello World\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\vmano\\AppData\\Roaming\\NuGet\\NuGet.Config",

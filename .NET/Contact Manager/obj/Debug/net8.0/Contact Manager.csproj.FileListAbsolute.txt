@@ -13,3 +13,18 @@ C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Contact Manager\Cont
 C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Contact Manager\Contact Manager\obj\Debug\net8.0\Contact Manager.pdb
 C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Contact Manager\Contact Manager\obj\Debug\net8.0\Contact Manager.genruntimeconfig.cache
 C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Contact Manager\Contact Manager\obj\Debug\net8.0\ref\Contact Manager.dll
+C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Contact Manager\bin\Debug\net8.0\Contact Manager.exe
+C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Contact Manager\bin\Debug\net8.0\Contact Manager.deps.json
+C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Contact Manager\bin\Debug\net8.0\Contact Manager.runtimeconfig.json
+C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Contact Manager\bin\Debug\net8.0\Contact Manager.dll
+C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Contact Manager\bin\Debug\net8.0\Contact Manager.pdb
+C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Contact Manager\obj\Debug\net8.0\Contact Manager.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Contact Manager\obj\Debug\net8.0\Contact Manager.AssemblyInfoInputs.cache
+C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Contact Manager\obj\Debug\net8.0\Contact Manager.AssemblyInfo.cs
+C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Contact Manager\obj\Debug\net8.0\Contact Manager.csproj.CoreCompileInputs.cache
+C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Contact Manager\obj\Debug\net8.0\Contact Manager.sourcelink.json
+C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Contact Manager\obj\Debug\net8.0\Contact Manager.dll
+C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Contact Manager\obj\Debug\net8.0\refint\Contact Manager.dll
+C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Contact Manager\obj\Debug\net8.0\Contact Manager.pdb
+C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Contact Manager\obj\Debug\net8.0\Contact Manager.genruntimeconfig.cache
+C:\Users\vmano\Documents\Programming\I am bored Helppp\.NET\Contact Manager\obj\Debug\net8.0\ref\Contact Manager.dll
