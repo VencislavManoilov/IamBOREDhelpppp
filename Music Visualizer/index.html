@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Music Visualization</title>
+</head>
+<body>
+    <input type="file" id="audioFile" accept="audio/*">
+    <canvas id="visualizer" width="800" height="800"></canvas>
+
+    <script>
+        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        const audioFileInput = document.getElementById('audioFile');
+        const canvas = document.getElementById('visualizer');
+        const canvasContext = canvas.getContext('2d');
+
+        audioFileInput.addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    audioContext.decodeAudioData(e.target.result, function(buffer) {
+                        visualize(buffer);
+                    });
+                };
+                reader.readAsArrayBuffer(file);
+            }
+        });
+
+        function visualize(buffer) {
+            const source = audioContext.createBufferSource();
+            source.buffer = buffer;
+            
+            const analyser = audioContext.createAnalyser();
+            analyser.fftSize = 2048;
+            
+            source.connect(analyser);
+            analyser.connect(audioContext.destination);
+            
+            source.start(0);
+            draw(analyser);
+        }
+
+        function draw(analyser) {
+            const bufferLength = analyser.frequencyBinCount;
+            console.log(bufferLength);
+            const dataArray = new Uint8Array(bufferLength);
+            let x = 0;
+
+            function drawFrame() {
+                requestAnimationFrame(drawFrame);
+                
+                analyser.getByteFrequencyData(dataArray);
+                
+                canvasContext.fillStyle = 'rgb(0, 0, 0)';
+                canvasContext.fillRect(0, 0, canvas.width, canvas.height);
+                
+                const barWidth = (canvas.width / bufferLength) * 2.5;
+                let barHeight;
+                
+                for(let i = 0; i < bufferLength/3; i++) {
+                    barHeight = dataArray[i];
+                    
+                    // canvasContext.fillStyle = 'rgb(' + (barHeight + 100) + ',50,50)';
+                    canvasContext.fillStyle = `hsl(${i*0.3515625*3 + barHeight/2}, 100%, 50%)`;
+
+                    canvasContext.save();
+                    canvasContext.translate(canvas.width/2 + 0.5, canvas.height/2);
+                    canvasContext.rotate((i*0.3515625*3 + x)*Math.PI/180);
+                    canvasContext.translate(-canvas.width/2, -canvas.height/2);
+                    // canvasContext.fillRect(canvas.width/2, canvas.height/2, 1, barHeight/2);
+                    canvasContext.fillRect(canvas.width/2 - 0.5, canvas.height/2, 2, barHeight);
+                    canvasContext.restore();
+                    
+                }
+
+                x += 0.1;
+            }
+            
+            drawFrame();
+        }
+    </script>
+</body>
+</html>
