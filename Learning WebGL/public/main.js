@@ -38,7 +38,7 @@ const fragmentShaderSource = `
         mat3 mTranslate;
         mTranslate[0] = vec3(1., 0., 0.);
         mTranslate[1] = vec3(0., 1., 0.);
-        mTranslate[2] = vec3(-iMouse.x, -iMouse.y, 1.);
+        mTranslate[2] = vec3(-iResolution.x + cos(iTime * 5.) * 200., -iResolution.y + sin(iTime * 5.) * 200., 1.);
         
         vec3 p_rotate = mRotate*mTranslate*vec3(gl_FragCoord);
         if(abs(p_rotate.x) + abs(p_rotate.y) < 200.) {
