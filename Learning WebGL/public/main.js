@@ -29,7 +29,7 @@ const fragmentShaderSource = `
         gl_FragColor = vec4(col, 1.0);
 
         float a = 2., b = 0.5;
-        float U = iTime;
+        float U = iTime * 5.;
         mat3 mRotate;
         mRotate[0] = vec3(cos(U),      sin(U),          0.);
         mRotate[1] = vec3(-sin(U),     cos(U),          0.);
@@ -38,7 +38,7 @@ const fragmentShaderSource = `
         mat3 mTranslate;
         mTranslate[0] = vec3(1., 0., 0.);
         mTranslate[1] = vec3(0., 1., 0.);
-        mTranslate[2] = vec3(iMouse.x * 100., iMouse.y * 100., 1.);
+        mTranslate[2] = vec3(-iMouse.x, -iMouse.y, 1.);
         
         vec3 p_rotate = mRotate*mTranslate*vec3(gl_FragCoord);
         if(abs(p_rotate.x) + abs(p_rotate.y) < 200.) {
@@ -106,7 +106,7 @@ function render(time) {
     const timeInSeconds = time * 0.001;
     // Set the time uniform
     gl.uniform1f(timeLocation, timeInSeconds);
-    gl.uniform2f(mouseLocation, -mouseX/50, -mouseY/50);
+    gl.uniform2f(mouseLocation, mouseX*2, mouseY*2);
 
     // Clear the canvas
     gl.clear(gl.COLOR_BUFFER_BIT);
