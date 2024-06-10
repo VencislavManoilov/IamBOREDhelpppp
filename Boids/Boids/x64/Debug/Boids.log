@@ -1,2 +1,3 @@
 ﻿  Boids.cpp
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(80,15): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   Boids.vcxproj -> C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\x64\Debug\Boids.exe
