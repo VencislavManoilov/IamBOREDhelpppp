@@ -1,6 +1,8 @@
 #include "SFML/Graphics.hpp"
 #include <SFML/Graphics/Font.hpp>
-#include "iostream"
+#include <SFML/Window/Mouse.hpp>
+#include <iostream>
+#include <string>
 
 int main() {
 
@@ -23,9 +25,15 @@ int main() {
 			return -1;
 		}
 
+		sf::Vector2i mouseP = sf::Mouse::getPosition();
+		mouseP -= window.getPosition();
+
+
+		std::string a = "X: " + std::to_string(mouseP.x) + "; Y: " + std::to_string(mouseP.y);
+
 		sf::Text text;
 		text.setFont(font);
-		text.setString("Hello World!");
+		text.setString(a);
 		text.setCharacterSize(24);
 		text.setFillColor(sf::Color::Red);
 		text.setPosition(10, 10);
@@ -35,7 +43,7 @@ int main() {
 
 		sf::CircleShape shape(50.f);
 		shape.setFillColor(sf::Color(150, 50, 250));
-		shape.setPosition(50, 100);
+		shape.setPosition(150 + std::cos(time * 3.14 / 180) * 100, 100 + std::sin(time * 3.14 / 180) * 100);
 		shape.setOutlineThickness(10.f);
 		shape.setOutlineColor(sf::Color(250, 150, 100));
 
@@ -44,7 +52,7 @@ int main() {
 
 		sf::RectangleShape rectangle(sf::Vector2f(120, 50));
 		rectangle.setFillColor(sf::Color::Green);
-		rectangle.setPosition(200, 75);
+		rectangle.setPosition(mouseP.x - 8, mouseP.y - 31);
 
 		window.draw(rectangle);
 
