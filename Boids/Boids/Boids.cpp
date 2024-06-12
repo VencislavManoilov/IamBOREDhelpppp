@@ -2,10 +2,14 @@
 #include <SFML/Graphics/Font.hpp>
 #include <SFML/Window/Mouse.hpp>
 #include <iostream>
-#include <cstdlib> 
+#include <cmath>
 
 static int randomInteger(int min, int max) {
 	return (rand() % (max - min + 1)) + min;
+}
+
+static float distance(float X1, float Y1, float X2, float Y2) {
+	return std::sqrt((X2 - X1) * (X2 - X1) + (Y2 - Y1) * (Y2 - Y1));
 }
 
 int main() {
@@ -14,6 +18,9 @@ int main() {
 	sf::Event e;
 
 	int time = 0;
+
+
+	const int BirdsNum = 100;
 
 
 	class Bird {
@@ -25,9 +32,9 @@ int main() {
 		Bird() : position(0, 0), size(0), angle(0) {}
 
 		Bird(float X, float Y, float Size, float Angle)
-			: position(X, Y), size(Size), angle(Angle) {}
+		: position(X, Y), size(Size), angle(Angle) {}
 
-		void Move() {
+		void MoveForward() {
 			position.x += std::cos(angle * 3.14/180)/10;
 			position.y += std::sin(angle * 3.14/180)/10;
 
@@ -35,6 +42,40 @@ int main() {
 			position.x = (position.x > 825) ? -25 : position.x;
 			position.y = (position.y < -25) ? 625 : position.y;
 			position.y = (position.y > 625) ? -25 : position.y;
+		}
+
+		void InRadius(Bird birds[], int length) {
+			sf::Vector2f point(0, 0);
+			float Angle = 0;
+
+			for (int i = 0; i < length; i++) {
+				point.x += birds[i].position.x;
+				point.y += birds[i].position.y;
+
+				Angle += birds[i].angle;
+			}
+
+			point.x /= length;
+			point.y /= length;
+			Angle /= length;
+
+			Alignment(Angle);
+			Cohesion(point.x, point.y);
+		}
+
+		void Separation() {
+			// I have no idea what is this
+		}
+
+		void Alignment(float Angle) {
+			angle = (angle < Angle) ? (angle + 0.1) : (angle - 0.1);
+		}
+
+		void Cohesion(float X, float Y) {
+			float angle = atan2(Y - position.y, X - position.x);
+
+			position.x += std::cos(angle)/10;
+			position.y += std::sin(angle)/10;
 		}
 
 		void draw(sf::RenderWindow& window) const {
@@ -50,9 +91,9 @@ int main() {
 		}
 	};
 
-	Bird* birds = new Bird[100];
+	Bird* birds = new Bird[BirdsNum];
 
-	for(int i = 0; i < 100; i++) {
+	for(int i = 0; i < BirdsNum; i++) {
 		birds[i] = Bird(randomInteger(25, 775), randomInteger(25, 575), 50, randomInteger(0, 360));
 	}
 
@@ -72,8 +113,27 @@ int main() {
 
 		sf::Vector2i mouseP = sf::Mouse::getPosition(window);
 
-		for (int i = 0; i < 100; i++) {
-			birds[i].Move();
+		for (int i = 0; i < BirdsNum; i++) {
+			birds[i].MoveForward();
+
+			Bird InRangeBirds[BirdsNum];
+			int length = 0;
+
+			for (int j = 0; j < BirdsNum; j++) {
+				if (i != j) {
+					if (distance(birds[i].position.x, birds[i].position.y, birds[j].position.x, birds[j].position.y) < 150) {
+						InRangeBirds[length] = birds[j];
+						length++;
+					}
+				}
+			}
+
+			Bird* InRangeBirdsFinall = new Bird[length];
+			for (int k = 0; k < length; k++) {
+				InRangeBirdsFinall[k] = InRangeBirds[k];
+			}
+
+			birds[i].InRadius(InRangeBirdsFinall, length);
 
 			birds[i].draw(window);
 		}
