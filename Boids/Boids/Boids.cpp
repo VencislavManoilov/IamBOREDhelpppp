@@ -60,7 +60,7 @@ int main() {
 			Angle /= length;
 
 			Alignment(Angle);
-			Cohesion(point.x, point.y);
+			//Cohesion(point.x, point.y);
 		}
 
 		void Separation() {
@@ -121,7 +121,7 @@ int main() {
 
 			for (int j = 0; j < BirdsNum; j++) {
 				if (i != j) {
-					if (distance(birds[i].position.x, birds[i].position.y, birds[j].position.x, birds[j].position.y) < 150) {
+					if (distance(birds[i].position.x, birds[i].position.y, birds[j].position.x, birds[j].position.y) < 100) {
 						InRangeBirds[length] = birds[j];
 						length++;
 					}
@@ -134,6 +134,8 @@ int main() {
 			}
 
 			birds[i].InRadius(InRangeBirdsFinall, length);
+
+			delete[] InRangeBirdsFinall;
 
 			birds[i].draw(window);
 		}
