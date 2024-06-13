@@ -162,11 +162,6 @@ int main() {
 
 		window.clear(sf::Color(50, 50, 50));
 
-		sf::Font font;
-		if (!font.loadFromFile("Fonts/arial.ttf")) {
-			return -1;
-		}
-
 		sf::Vector2i mouseP = sf::Mouse::getPosition(window);
 
 		for (int i = 0; i < BirdsNum; i++) {
