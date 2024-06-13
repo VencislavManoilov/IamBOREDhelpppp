@@ -35,14 +35,28 @@ int main() {
 		: position(X, Y), size(Size), angle(Angle) {}
 
 		void MoveForward(sf::RenderWindow& window) {
-			position.x += std::cos(angle * 3.14/180)/10;
-			position.y += std::sin(angle * 3.14/180)/10;
+			position.x += std::cos(angle * 3.14 / 180) / 10;
+			position.y += std::sin(angle * 3.14 / 180) / 10;
 
 			sf::Vector2u windowSize = window.getSize();
-			position.x = (position.x < -25) ? (windowSize.x + 25) : position.x;
-			position.x = (position.x > window.getSize().x + 25) ? -25 : position.x;
-			position.y = (position.y < -25) ? (window.getSize().y + 25) : position.y;
-			position.y = (position.y > window.getSize().y + 25) ? -25 : position.y;
+
+			position.x = (position.x < -size / 2) ? (windowSize.x + size / 2) : position.x;
+			position.x = (position.x > window.getSize().x + size / 2) ? -size / 2 : position.x;
+			position.y = (position.y < -size / 2) ? (window.getSize().y + size / 2) : position.y;
+			position.y = (position.y > window.getSize().y + size / 2) ? -size / 2 : position.y;
+
+			float repulsionDistance = 50;
+
+			if (position.x < repulsionDistance || position.x > windowSize.x - repulsionDistance || position.y < repulsionDistance || position.y > windowSize.y - repulsionDistance) {
+				angle += ((atan2(position.y - windowSize.y / 2, position.x - windowSize.x / 2) * 180 / 3.14 + 180) - angle) / 1000;
+			}
+
+			if (angle < 0) {
+				angle += 360;
+			}
+			else if (angle >= 360) {
+				angle -= 360;
+			}
 		}
 
 		void InRadius(Bird birds[], int length) {
@@ -94,15 +108,15 @@ int main() {
 				// Safeguard to ensure no NaN values are used
 				if (!std::isnan(moveX) && !std::isnan(moveY)) {
 					float moveAngle = atan2(moveY, moveX);
-					position.x += std::cos(moveAngle) * 0.1;
-					position.y += std::sin(moveAngle) * 0.1;
+					position.x += std::cos(moveAngle) * 0.05;
+					position.y += std::sin(moveAngle) * 0.05;
 				}
 			}
 		}
 
 		void Alignment(float Angle) {
 			if(angle != Angle)
-				angle = (angle < Angle) ? (angle + 0.1) : (angle - 0.1);
+				angle = (angle < Angle) ? (angle + 0.025) : (angle - 0.025);
 		}
 
 		void Cohesion(float X, float Y) {
@@ -158,8 +172,12 @@ int main() {
 			for (int j = 0; j < BirdsNum; j++) {
 				if (i != j) {
 					if (distance(birds[i].position.x, birds[i].position.y, birds[j].position.x, birds[j].position.y) < 100) {
-						InRangeBirds[length] = birds[j];
-						length++;
+						float angleBetweenTheBirds = atan2(birds[i].position.y - birds[j].position.y, birds[i].position.x - birds[j].position.x) + (birds[i].angle * 3.14 / 180);
+
+						if (abs(angleBetweenTheBirds) < 160) {
+							InRangeBirds[length] = birds[j];
+							length++;
+						}
 					}
 				}
 			}

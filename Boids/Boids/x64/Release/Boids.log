@@ -1,61 +1,63 @@
 ﻿  Boids.cpp
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(38,44): warning C4244: '+=': conversion from 'double' to 'T', possible loss of data
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(38,44): warning C4244:         with
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(38,44): warning C4244:         [
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(38,44): warning C4244:             T=float
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(38,44): warning C4244:         ]
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(39,44): warning C4244: '+=': conversion from 'double' to 'T', possible loss of data
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(39,44): warning C4244:         with
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(39,44): warning C4244:         [
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(39,44): warning C4244:             T=float
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(39,44): warning C4244:         ]
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(97,40): warning C4244: '+=': conversion from 'double' to 'T', possible loss of data
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(97,40): warning C4244:         with
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(97,40): warning C4244:         [
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(97,40): warning C4244:             T=float
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(97,40): warning C4244:         ]
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(98,40): warning C4244: '+=': conversion from 'double' to 'T', possible loss of data
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(98,40): warning C4244:         with
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(98,40): warning C4244:         [
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(98,40): warning C4244:             T=float
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(98,40): warning C4244:         ]
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(105,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(120,103): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(120,103): warning C4244:         with
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(120,103): warning C4244:         [
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(120,103): warning C4244:             T=float
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(120,103): warning C4244:         ]
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(120,45): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(120,45): warning C4244:         with
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(120,45): warning C4244:         [
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(120,45): warning C4244:             T=float
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(120,45): warning C4244:         ]
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(121,103): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(121,103): warning C4244:         with
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(121,103): warning C4244:         [
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(121,103): warning C4244:             T=float
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(121,103): warning C4244:         ]
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(121,45): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(121,45): warning C4244:         with
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(121,45): warning C4244:         [
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(121,45): warning C4244:             T=float
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(121,45): warning C4244:         ]
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(122,97): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(122,97): warning C4244:         with
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(122,97): warning C4244:         [
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(122,97): warning C4244:             T=float
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(122,97): warning C4244:         ]
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(122,45): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(122,45): warning C4244:         with
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(122,45): warning C4244:         [
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(122,45): warning C4244:             T=float
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(122,45): warning C4244:         ]
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(133,84): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(133,56): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(133,32): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(38,47): warning C4244: '+=': conversion from 'double' to 'T', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(38,47): warning C4244:         with
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(38,47): warning C4244:         [
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(38,47): warning C4244:             T=float
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(38,47): warning C4244:         ]
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(39,47): warning C4244: '+=': conversion from 'double' to 'T', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(39,47): warning C4244:         with
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(39,47): warning C4244:         [
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(39,47): warning C4244:             T=float
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(39,47): warning C4244:         ]
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(51,113): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(111,40): warning C4244: '+=': conversion from 'double' to 'T', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(111,40): warning C4244:         with
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(111,40): warning C4244:         [
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(111,40): warning C4244:             T=float
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(111,40): warning C4244:         ]
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(112,40): warning C4244: '+=': conversion from 'double' to 'T', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(112,40): warning C4244:         with
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(112,40): warning C4244:         [
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(112,40): warning C4244:             T=float
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(112,40): warning C4244:         ]
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(119,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(134,103): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(134,103): warning C4244:         with
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(134,103): warning C4244:         [
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(134,103): warning C4244:             T=float
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(134,103): warning C4244:         ]
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(134,45): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(134,45): warning C4244:         with
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(134,45): warning C4244:         [
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(134,45): warning C4244:             T=float
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(134,45): warning C4244:         ]
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(135,103): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(135,103): warning C4244:         with
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(135,103): warning C4244:         [
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(135,103): warning C4244:             T=float
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(135,103): warning C4244:         ]
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(135,45): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(135,45): warning C4244:         with
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(135,45): warning C4244:         [
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(135,45): warning C4244:             T=float
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(135,45): warning C4244:         ]
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(136,97): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(136,97): warning C4244:         with
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(136,97): warning C4244:         [
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(136,97): warning C4244:             T=float
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(136,97): warning C4244:         ]
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(136,45): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(136,45): warning C4244:         with
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(136,45): warning C4244:         [
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(136,45): warning C4244:             T=float
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(136,45): warning C4244:         ]
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(147,84): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(147,56): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(147,32): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\Boids\Boids.cpp(175,34): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
   Generating code
-  3 of 85 functions ( 3.5%) were compiled, the rest were copied from previous compilation.
-    1 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+  1 of 87 functions ( 1.1%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    1 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   Boids.vcxproj -> C:\Users\vmano\Documents\Programming\I am bored Helppp\Boids\x64\Release\Boids.exe
