@@ -10,6 +10,19 @@ int main()
     sf::RenderWindow window(sf::VideoMode(800, 600), "Boids");
     sf::Event e;
 
+	int time = 0;
+	int RenderOption = 0;
+	
+	sf::Vector2f position(400, 300);
+
+	int fieldOfView = 130;
+	int iterations = 20;
+	int width = 200;
+	int angles = 100;
+
+	float startAngle = 0;
+	bool SpacebarPressed = false;
+
 	const int BoxNum = 5;
 
 	class Box {
@@ -46,23 +59,32 @@ int main()
 		Ray(sf::Vector2f StartPosition, float Angle, float Width, int Iterations) :
 		startPosition(StartPosition), angle(Angle), width(Width), iterations(Iterations) {}
 
-		float GetDistance(Box boxes[], int length) {
-
-
-			return 0;
-		}
-
-		void Draw(sf::RenderWindow& window) {
+		float GetDistance(Box boxes[], int length, bool Draw, sf::RenderWindow& window) {
 			std::vector<sf::CircleShape> shape(iterations);
 
 			for (int i = 0; i < iterations; i++) {
-				shape[i].setRadius(2);
-				shape[i].setFillColor(sf::Color::White);
-
 				float dist = i * (width/iterations);
-				shape[i].setPosition(startPosition.x + std::cos(angle * 3.14 / 180) * dist, startPosition.y + std::sin(angle * 3.14 / 180) * dist);
+				float X = startPosition.x + std::cos(angle * 3.14 / 180) * dist;
+				float Y = startPosition.y + std::sin(angle * 3.14 / 180) * dist;
 
-				window.draw(shape[i]);
+				if (Draw) {
+					shape[i].setRadius(2);
+					shape[i].setFillColor(sf::Color::White);
+
+					shape[i].setPosition(X, Y);
+
+					window.draw(shape[i]);
+				}
+
+				for (int j = 0; j < length; j++) {
+					// Checks if inside
+					if (X >= boxes[j].position.x && X <= boxes[j].position.x + boxes[j].size.x
+					&&  Y >= boxes[j].position.y && Y <= boxes[j].position.y + boxes[j].size.y) {
+
+						return dist;
+						i = length;
+					}
+				}
 			}
 		}
 	};
@@ -93,9 +115,40 @@ int main()
 		}
 
 		for (int i = 0; i < 100; i++) {
-			rays[i].Draw(window);
+			rays[i].startPosition = position;
+			rays[i].angle = startAngle + (fieldOfView / (angles - 1)) * i;
+			rays[i].width = width;
+			rays[i].GetDistance(boxes, BoxNum, true, window);
+		}
+
+		// Keyboard inputs
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
+			position.y--;
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+			position.y++;
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
+			position.x--;
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+			position.x++;
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q))
+			startAngle--;
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::E))
+			startAngle++;
+
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
+			if (!SpacebarPressed) {
+				RenderOption++;
+			}
+			SpacebarPressed = true;
+		} else {
+			SpacebarPressed = false;
+		}
+
+		if (RenderOption > 1) {
+			RenderOption = 0;
 		}
 
 		window.display();
+		time++;
 	}
 }
