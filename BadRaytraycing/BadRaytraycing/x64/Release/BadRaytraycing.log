@@ -22,10 +22,52 @@ C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytray
 C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(97,104): warning C4244:             T=float
 C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(97,104): warning C4244:         ]
 C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(101,15): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(131,28): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(133,41): warning C4244: 'argument': conversion from 'double' to 'sf::Uint8', possible loss of data
-C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(141,19): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(142,19): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(123,31): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(130,22): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(136,28): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(138,41): warning C4244: 'argument': conversion from 'double' to 'sf::Uint8', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(150,19): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(151,19): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(154,26): warning C4244: '+=': conversion from 'double' to 'T', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(154,26): warning C4244:         with
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(154,26): warning C4244:         [
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(154,26): warning C4244:             T=float
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(154,26): warning C4244:         ]
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(155,26): warning C4244: '+=': conversion from 'double' to 'T', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(155,26): warning C4244:         with
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(155,26): warning C4244:         [
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(155,26): warning C4244:             T=float
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(155,26): warning C4244:         ]
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(158,26): warning C4244: '+=': conversion from 'double' to 'T', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(158,26): warning C4244:         with
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(158,26): warning C4244:         [
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(158,26): warning C4244:             T=float
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(158,26): warning C4244:         ]
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(159,26): warning C4244: '+=': conversion from 'double' to 'T', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(159,26): warning C4244:         with
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(159,26): warning C4244:         [
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(159,26): warning C4244:             T=float
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(159,26): warning C4244:         ]
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(162,26): warning C4244: '+=': conversion from 'double' to 'T', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(162,26): warning C4244:         with
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(162,26): warning C4244:         [
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(162,26): warning C4244:             T=float
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(162,26): warning C4244:         ]
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(163,26): warning C4244: '+=': conversion from 'double' to 'T', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(163,26): warning C4244:         with
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(163,26): warning C4244:         [
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(163,26): warning C4244:             T=float
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(163,26): warning C4244:         ]
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(166,26): warning C4244: '+=': conversion from 'double' to 'T', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(166,26): warning C4244:         with
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(166,26): warning C4244:         [
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(166,26): warning C4244:             T=float
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(166,26): warning C4244:         ]
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(167,26): warning C4244: '+=': conversion from 'double' to 'T', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(167,26): warning C4244:         with
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(167,26): warning C4244:         [
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(167,26): warning C4244:             T=float
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(167,26): warning C4244:         ]
   Generating code
   1 of 74 functions ( 1.4%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation

@@ -16,7 +16,7 @@ int main()
 	sf::Vector2f position(400, 300);
 
 	const int fieldOfView = 130;
-	const int iterations = 20;
+	const int iterations = 100;
 	const int width = 200;
 	const int angles = 100;
 
@@ -99,7 +99,7 @@ int main()
 
 	for (int i = 0; i < 100; i++) {
 		float angle = (130. / 99.) * i;
-		rays[i] = Ray(sf::Vector2f(400, 300), angle, 200, 20);
+		rays[i] = Ray(sf::Vector2f(400, 300), angle, width, iterations);
 	}
 
 	while (window.isOpen()) {
@@ -120,17 +120,26 @@ int main()
 		sf::RectangleShape shape[angles];
 		for (int i = 0; i < 100; i++) {
 			rays[i].startPosition = position;
-			rays[i].angle = startAngle + (fieldOfView / (angles - 1)) * i;
+			rays[i].angle = startAngle + (fieldOfView / (angles - 1.)) * i;
 			rays[i].width = width;
 
 			if (RenderOption == 0) {
 				rays[i].GetDistance(boxes, BoxNum, true, window);
 			} else if (RenderOption == 1) {
 				float value = rays[i].GetDistance(boxes, BoxNum, false, window);
+				float wallHeigth = value * (600./width);
 
-				shape[i].setPosition(i * (800/angles), 0);
+				/*shape[i].setPosition(i * (800/angles), 0);
 				shape[i].setSize(sf::Vector2f(800 / angles, 600));
+				shape[i].setFillColor(sf::Color(255 - value * (255. / width), 0, 0));*/
+				
+				shape[i].setPosition(i * (800/angles), 300 - (300 - wallHeigth/2));
+				shape[i].setSize(sf::Vector2f(800 / angles, 600 - wallHeigth));
 				shape[i].setFillColor(sf::Color(255 - value * (255. / width), 0, 0));
+
+				/* shape[i].setPosition(i* (800 / angles), 0);
+				shape[i].setSize(sf::Vector2f(800 / angles, 600));
+				shape[i].setFillColor(sf::Color(255 - value * (255. / width), 0, 0));*/
 
 				window.draw(shape[i]);
 			}
@@ -142,20 +151,20 @@ int main()
 		MoveY = std::sin((startAngle + fieldOfView / 2) * 3.14 / 180.);
 
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
-			position.x += MoveX;
-			position.y += MoveY;
+			position.x += std::cos((startAngle + fieldOfView / 2) * 3.14 / 180.);
+			position.y += std::sin((startAngle + fieldOfView / 2) * 3.14 / 180.);
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
-			position.x -= MoveX;
-			position.y -= MoveY;
+			position.x += std::cos((startAngle + fieldOfView / 2 - 180) * 3.14 / 180.);
+			position.y += std::sin((startAngle + fieldOfView / 2 - 180) * 3.14 / 180.);
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
-			position.x += MoveX;
-			position.y -= MoveY;
+			position.x += std::cos((startAngle + fieldOfView / 2 - 90) * 3.14 / 180.);
+			position.y += std::sin((startAngle + fieldOfView / 2 - 90) * 3.14 / 180.);
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
-			position.x -= MoveX;
-			position.y += MoveY;
+			position.x += std::cos((startAngle + fieldOfView / 2 + 90) * 3.14 / 180.);
+			position.y += std::sin((startAngle + fieldOfView / 2 + 90) * 3.14 / 180.);
 		}
 
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q))
