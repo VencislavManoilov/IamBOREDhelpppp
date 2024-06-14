@@ -15,10 +15,10 @@ int main()
 	
 	sf::Vector2f position(400, 300);
 
-	int fieldOfView = 130;
-	int iterations = 20;
-	int width = 200;
-	int angles = 100;
+	const int fieldOfView = 130;
+	const int iterations = 20;
+	const int width = 200;
+	const int angles = 100;
 
 	float startAngle = 0;
 	bool SpacebarPressed = false;
@@ -82,10 +82,11 @@ int main()
 					&&  Y >= boxes[j].position.y && Y <= boxes[j].position.y + boxes[j].size.y) {
 
 						return dist;
-						i = length;
 					}
 				}
 			}
+
+			return width;
 		}
 	};
 
@@ -110,31 +111,57 @@ int main()
 
 		window.clear(sf::Color(50, 50, 50));
 
-		for (int i = 0; i < BoxNum; i++) {
-			boxes[i].Draw(window);
+		if (RenderOption == 0) {
+			for (int i = 0; i < BoxNum; i++) {
+				boxes[i].Draw(window);
+			}
 		}
 
+		sf::RectangleShape shape[angles];
 		for (int i = 0; i < 100; i++) {
 			rays[i].startPosition = position;
 			rays[i].angle = startAngle + (fieldOfView / (angles - 1)) * i;
 			rays[i].width = width;
-			rays[i].GetDistance(boxes, BoxNum, true, window);
+
+			if (RenderOption == 0) {
+				rays[i].GetDistance(boxes, BoxNum, true, window);
+			} else if (RenderOption == 1) {
+				float value = rays[i].GetDistance(boxes, BoxNum, false, window);
+
+				shape[i].setPosition(i * (800/angles), 0);
+				shape[i].setSize(sf::Vector2f(800 / angles, 600));
+				shape[i].setFillColor(sf::Color(255 - value * (255. / width), 0, 0));
+
+				window.draw(shape[i]);
+			}
 		}
 
 		// Keyboard inputs
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
-			position.y--;
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
-			position.y++;
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
-			position.x--;
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
-			position.x++;
+		float MoveX, MoveY;
+		MoveX = std::cos((startAngle + fieldOfView / 2) * 3.14 / 180.);
+		MoveY = std::sin((startAngle + fieldOfView / 2) * 3.14 / 180.);
+
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
+			position.x += MoveX;
+			position.y += MoveY;
+		}
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
+			position.x -= MoveX;
+			position.y -= MoveY;
+		}
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
+			position.x += MoveX;
+			position.y -= MoveY;
+		}
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
+			position.x -= MoveX;
+			position.y += MoveY;
+		}
+
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q))
 			startAngle--;
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::E))
 			startAngle++;
-
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
 			if (!SpacebarPressed) {
 				RenderOption++;

@@ -1,28 +1,31 @@
 ﻿  BadRaytraycing.cpp
 C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(67,13): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
 C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(68,13): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(96,67): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(96,67): warning C4244:         with
-C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(96,67): warning C4244:         [
-C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(96,67): warning C4244:             T=float
-C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(96,67): warning C4244:         ]
-C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(96,44): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(96,44): warning C4244:         with
-C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(96,44): warning C4244:         [
-C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(96,44): warning C4244:             T=float
-C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(96,44): warning C4244:         ]
-C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(96,127): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(96,127): warning C4244:         with
-C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(96,127): warning C4244:         [
-C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(96,127): warning C4244:             T=float
-C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(96,127): warning C4244:         ]
-C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(96,104): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(96,104): warning C4244:         with
-C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(96,104): warning C4244:         [
-C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(96,104): warning C4244:             T=float
-C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(96,104): warning C4244:         ]
-C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(100,15): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(120,20): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(97,67): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(97,67): warning C4244:         with
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(97,67): warning C4244:         [
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(97,67): warning C4244:             T=float
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(97,67): warning C4244:         ]
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(97,44): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(97,44): warning C4244:         with
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(97,44): warning C4244:         [
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(97,44): warning C4244:             T=float
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(97,44): warning C4244:         ]
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(97,127): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(97,127): warning C4244:         with
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(97,127): warning C4244:         [
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(97,127): warning C4244:             T=float
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(97,127): warning C4244:         ]
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(97,104): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(97,104): warning C4244:         with
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(97,104): warning C4244:         [
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(97,104): warning C4244:             T=float
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(97,104): warning C4244:         ]
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(101,15): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(131,28): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(133,41): warning C4244: 'argument': conversion from 'double' to 'sf::Uint8', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(141,19): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\BadRaytraycing\BadRaytraycing\BadRaytraycing.cpp(142,19): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
   Generating code
   1 of 74 functions ( 1.4%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
