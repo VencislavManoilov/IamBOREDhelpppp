@@ -115,6 +115,11 @@ int main()
 			window.clear(sf::Color::Black);
 		}
 
+		sf::Font font;
+		if (!font.loadFromFile("Fonts/arial.ttf")) {
+			return -1;
+		}
+
 		if (RenderOption == 0) {
 			for (int i = 0; i < BoxNum; i++) {
 				boxes[i].Draw(window);
@@ -187,6 +192,13 @@ int main()
 		if (RenderOption > 1) {
 			RenderOption = 0;
 		}
+
+		sf::Text controllsTextMove("Move - WASD", font, 25);
+		sf::Text controllsTextRenderOptions("Change render - Space", font, 25);
+		controllsTextRenderOptions.setPosition(0, 30);
+
+		window.draw(controllsTextMove);
+		window.draw(controllsTextRenderOptions);
 
 		window.display();
 		time++;
