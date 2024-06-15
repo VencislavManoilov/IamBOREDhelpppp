@@ -23,7 +23,7 @@ int main()
 	float startAngle = 0;
 	bool SpacebarPressed = false;
 
-	const int BoxNum = 5;
+	const int BoxNum = 20;
 
 	class Box {
 	public:
@@ -94,7 +94,7 @@ int main()
 	Ray* rays = new Ray[angles];
 
 	for (int i = 0; i < BoxNum; i++) {
-		boxes[i] = Box(sf::Vector2f(randomInteger(0, 700), randomInteger(0, 500)), sf::Vector2f(randomInteger(0, 100), randomInteger(0, 100)), sf::Color::Green);
+		boxes[i] = Box(sf::Vector2f(randomInteger(0, 700), randomInteger(0, 500)), sf::Vector2f(randomInteger(0, 100), randomInteger(0, 100)), sf::Color::Red);
 	}
 
 	for (int i = 0; i < angles; i++) {
@@ -109,7 +109,11 @@ int main()
 			}
 		}
 
-		window.clear(sf::Color(50, 50, 50));
+		if (RenderOption == 0) {
+			window.clear(sf::Color(50, 50, 50));
+		} else {
+			window.clear(sf::Color::Black);
+		}
 
 		if (RenderOption == 0) {
 			for (int i = 0; i < BoxNum; i++) {
@@ -133,9 +137,11 @@ int main()
 				shape[i].setSize(sf::Vector2f(800 / angles, 600));
 				shape[i].setFillColor(sf::Color(255 - value * (255. / width), 0, 0));*/
 				
-				shape[i].setPosition(i * (800./angles), 300. - (300. - wallHeigth/2));
-				shape[i].setSize(sf::Vector2f(800. / angles, 600. - wallHeigth));
-				shape[i].setFillColor(sf::Color(255. - value * (255. / width), 0, 0));
+				if (value != width) {
+					shape[i].setPosition(i * (800./angles), 300. - (300. - wallHeigth/2 + 100));
+					shape[i].setSize(sf::Vector2f(800. / angles, 600. - wallHeigth + 200));
+					shape[i].setFillColor(sf::Color(255. - value * (255. / width), 0, 0));
+				}
 
 				/* shape[i].setPosition(i* (800 / angles), 0);
 				shape[i].setSize(sf::Vector2f(800 / angles, 600));
