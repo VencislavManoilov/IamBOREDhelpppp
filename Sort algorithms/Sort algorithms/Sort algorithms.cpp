@@ -15,8 +15,11 @@ int main()
 
 	int time = 0;
 
+<<<<<<< HEAD
 	int option = 0;
 
+=======
+>>>>>>> 22b22849ce1a8d7e91cc74fd789c2ca85cc2cc66
 	bool Start = false;
 
 	for (int i = 0; i < DataSize; i++) {
@@ -36,11 +39,15 @@ int main()
 		return -1;
 	}
 
+<<<<<<< HEAD
 	sf::Text controllsText("Start - Space; Bubble Sort - 1; Selection Sort - 2", font, 25);
 	sf::Text selectedSortText("Buble Sort", font, 25);
 	selectedSortText.setPosition(0, 30);
 
 	int selectionSortI = 0;
+=======
+	sf::Text controllsText("Start - Space", font, 25);
+>>>>>>> 22b22849ce1a8d7e91cc74fd789c2ca85cc2cc66
 
 	while (window.isOpen()) {
 		while (window.pollEvent(e)) {
@@ -52,7 +59,10 @@ int main()
 		window.clear(sf::Color(50, 50, 50));
 
 		window.draw(controllsText);
+<<<<<<< HEAD
 		window.draw(selectedSortText);
+=======
+>>>>>>> 22b22849ce1a8d7e91cc74fd789c2ca85cc2cc66
 		
 		float barWidth = 700.0f / DataSize;
 
@@ -67,6 +77,7 @@ int main()
 		}
 
 		if (Start) {
+<<<<<<< HEAD
 			switch (option) {
 			case 0:
 				for (int j = 0; j < DataSize - 1; j++) {
@@ -101,6 +112,18 @@ int main()
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
 			Start = true;
+=======
+			for (int j = 0; j < DataSize - 1; j++) {
+				if (data[j] > data[j + 1]) {
+					std::swap(data[j], data[j + 1]);
+				}
+			}
+		}
+
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
+			Start = true;
+		}
+>>>>>>> 22b22849ce1a8d7e91cc74fd789c2ca85cc2cc66
 
 		window.display();
 		time++;
