@@ -7,7 +7,7 @@ static int randomInteger(int min, int max) {
 
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(800, 600), "Boids");
+    sf::RenderWindow window(sf::VideoMode(800, 600), "Bad Raytraycing");
     sf::Event e;
 
 	int time = 0;
