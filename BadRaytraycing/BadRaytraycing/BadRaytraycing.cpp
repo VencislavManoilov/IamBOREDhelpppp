@@ -15,7 +15,7 @@ int main()
 	
 	sf::Vector2f position(400, 300);
 
-	const int fieldOfView = 130;
+	const int fieldOfView = 90;
 	const int iterations = 100;
 	const int width = 200;
 	const int angles = 100;
@@ -91,14 +91,14 @@ int main()
 	};
 
 	Box* boxes = new Box[BoxNum];
-	Ray* rays = new Ray[100];
+	Ray* rays = new Ray[angles];
 
 	for (int i = 0; i < BoxNum; i++) {
 		boxes[i] = Box(sf::Vector2f(randomInteger(0, 700), randomInteger(0, 500)), sf::Vector2f(randomInteger(0, 100), randomInteger(0, 100)), sf::Color::Green);
 	}
 
-	for (int i = 0; i < 100; i++) {
-		float angle = (130. / 99.) * i;
+	for (int i = 0; i < angles; i++) {
+		float angle = ((float)fieldOfView / (float)angles) * i;
 		rays[i] = Ray(sf::Vector2f(400, 300), angle, width, iterations);
 	}
 
@@ -118,9 +118,9 @@ int main()
 		}
 
 		sf::RectangleShape shape[angles];
-		for (int i = 0; i < 100; i++) {
+		for (int i = 0; i < angles; i++) {
 			rays[i].startPosition = position;
-			rays[i].angle = startAngle + (fieldOfView / (angles - 1.)) * i;
+			rays[i].angle = startAngle + ((float)fieldOfView / (float)angles) * i;
 			rays[i].width = width;
 
 			if (RenderOption == 0) {
@@ -133,9 +133,9 @@ int main()
 				shape[i].setSize(sf::Vector2f(800 / angles, 600));
 				shape[i].setFillColor(sf::Color(255 - value * (255. / width), 0, 0));*/
 				
-				shape[i].setPosition(i * (800/angles), 300 - (300 - wallHeigth/2));
-				shape[i].setSize(sf::Vector2f(800 / angles, 600 - wallHeigth));
-				shape[i].setFillColor(sf::Color(255 - value * (255. / width), 0, 0));
+				shape[i].setPosition(i * (800./angles), 300. - (300. - wallHeigth/2));
+				shape[i].setSize(sf::Vector2f(800. / angles, 600. - wallHeigth));
+				shape[i].setFillColor(sf::Color(255. - value * (255. / width), 0, 0));
 
 				/* shape[i].setPosition(i* (800 / angles), 0);
 				shape[i].setSize(sf::Vector2f(800 / angles, 600));
@@ -147,8 +147,6 @@ int main()
 
 		// Keyboard inputs
 		float MoveX, MoveY;
-		MoveX = std::cos((startAngle + fieldOfView / 2) * 3.14 / 180.);
-		MoveY = std::sin((startAngle + fieldOfView / 2) * 3.14 / 180.);
 
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
 			position.x += std::cos((startAngle + fieldOfView / 2) * 3.14 / 180.);
