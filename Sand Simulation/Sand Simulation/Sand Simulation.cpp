@@ -2,6 +2,9 @@
 #include <iostream>
 #include <vector>
 #include <windows.h>
+#include <cstdlib>
+#include <ctime>
+#include <random>
 
 const int SquareSize = 10;
 
@@ -12,8 +15,21 @@ std::vector<std::vector<int>> sandStage(SandWidth, std::vector<int>(SandHeight))
 std::vector<std::vector<int>> sandNextStage(SandWidth, std::vector<int>(SandHeight));
 sf::RectangleShape shapes[SandWidth][SandHeight];
 
-static int randomInteger(int min, int max) {
-	return (rand() % (max - min + 1)) + min;
+void seedRandomGenerator() {
+	std::srand(static_cast<unsigned int>(std::time(nullptr)));  // Using current time as seed
+}
+
+// Function to generate a random integer between min and max (inclusive)
+int randomInteger(int min, int max) {
+	// Ensure srand() is called to seed rand() before generating random numbers
+	static bool seeded = false;
+	if (!seeded) {
+		seedRandomGenerator();
+		seeded = true;
+	}
+
+	// Generate and return a random integer in the range [min, max]
+	return (std::rand() % (max - min + 1)) + min;
 }
 
 int main()
@@ -49,7 +65,34 @@ int main()
 						sandNextStage[x][y] = 0;
 						sandNextStage[x][y + 1] = 1;
 					} else {
-						sandNextStage[x][y] = 1;
+						bool done = false;
+						if (x > 0 && x < SandWidth - 1) {
+							if (sandStage[x - 1][y + 1] != 1 && sandStage[x + 1][y + 1] != 1) {
+								sandNextStage[x + (randomInteger(0, 1) * 2) - 1][y + 1] = 1;
+								sandNextStage[x][y] = 0;
+								done = true;
+							}
+						}
+
+						if (x > 0) {
+							if (sandStage[x - 1][y + 1] != 1 && x > 0) {
+								sandNextStage[x - 1][y + 1] = 1;
+								sandNextStage[x][y] = 0;
+								done = true;
+							}
+						}
+
+						if (x < SandWidth - 1) {
+							if (sandStage[x + 1][y + 1] != 1) {
+								sandNextStage[x + 1][y + 1] = 1;
+								sandNextStage[x][y] = 0;
+								done = true;
+							}
+						}
+
+						if (!done) {
+							sandNextStage[x][y] = 1;
+						}
 					}
 				}
 			}
