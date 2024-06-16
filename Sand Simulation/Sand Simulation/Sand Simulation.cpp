@@ -128,11 +128,6 @@ int main()
 				if (sandStage[x][y] == 1) {
 					window.draw(shapes[x][y]);
 				}
-			}
-		}
-
-		for (int x = 0; x < SandWidth; x++) {
-			for (int y = 0; y < SandHeight; y++) {
 				sandStage[x][y] = sandNextStage[x][y];
 			}
 		}
@@ -141,6 +136,6 @@ int main()
 
 		window.display();
 
-		Sleep(10);
+		Sleep(5);
     }
 }
