@@ -1,19 +1,7 @@
 ﻿  Sort algorithms.cpp
-<<<<<<< HEAD
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Sort algorithms\Sort algorithms\Sort algorithms.cpp(23,13): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Sort algorithms\Sort algorithms\Sort algorithms.cpp(62,51): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Sort algorithms\Sort algorithms\Sort algorithms.cpp(62,30): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
   Generating code
-  3 of 70 functions ( 4.3%) were compiled, the rest were copied from previous compilation.
+  1 of 70 functions ( 1.4%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-=======
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Sort algorithms\Sort algorithms\Sort algorithms.cpp(21,13): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Sort algorithms\Sort algorithms\Sort algorithms.cpp(56,51): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Sort algorithms\Sort algorithms\Sort algorithms.cpp(56,30): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-  Generating code
-  64 of 70 functions (91.4%) were compiled, the rest were copied from previous compilation.
-    63 functions were new in current compilation
->>>>>>> 22b22849ce1a8d7e91cc74fd789c2ca85cc2cc66
     0 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   Sort algorithms.vcxproj -> C:\Users\vmano\Documents\Programming\I am bored Helppp\Sort algorithms\x64\Release\Sort algorithms.exe

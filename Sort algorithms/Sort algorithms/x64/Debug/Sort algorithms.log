@@ -1,5 +1,2 @@
 ﻿  Sort algorithms.cpp
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Sort algorithms\Sort algorithms\Sort algorithms.cpp(23,13): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Sort algorithms\Sort algorithms\Sort algorithms.cpp(62,51): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Sort algorithms\Sort algorithms\Sort algorithms.cpp(62,30): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
   Sort algorithms.vcxproj -> C:\Users\vmano\Documents\Programming\I am bored Helppp\Sort algorithms\x64\Debug\Sort algorithms.exe
