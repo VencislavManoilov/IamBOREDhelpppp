@@ -1,4 +1,4 @@
-let dots = [], time = 0, numInside = 0, numOutside = 0;
+let dots = [], time = 0, numInside = 0;
 
 changeBg("#333");
 
@@ -11,13 +11,11 @@ function update() {
             let y = randomInteger(0, 500);
             let inside = true;
     
-            if(distance(250, 250, x, y) > 250) {
+            if(distance(250, 250, x, y) < 250) {
                 inside = false;
                 numInside++;
-            } else {
-                numOutside++;
             }
-            
+
             dots.push({x: x, y: y, inside: inside});
         }
     }
@@ -28,7 +26,7 @@ function draw() {
         fillArc(dots[i].x + 200, dots[i].y + 200, 2, dots[i].inside ? "blue" : "red");
     }
 
-    fillText("Pi: " + Math.floor(numInside/numOutside*100000)/10000, 200, 150, 25, "Arial", "black");
+    fillText("Pi: " + Math.floor(numInside/dots.length * 4 * 10000)/10000, 200, 150, 25, "Arial", "black");
 
     strokeRect(200, 200, 500, 500, 2, "white");
     strokeArc(450, 450, 250, 2, "white");
