@@ -37,11 +37,17 @@ int main()
     sf::RenderWindow window(sf::VideoMode(800, 600), "Sand Simulation");
     sf::Event e;
 
+	sf::Font font;
+	if (!font.loadFromFile("Fonts/arial.ttf")) {
+		return -1;
+	}
+
+	sf::Text controllsText("Place Sand - Mouse; Erase All - Del", font, 25);
+
 	for (int x = 0; x < SandWidth; x++) {
 		for (int y = 0; y < SandHeight; y++) {
-			int stage = randomInteger(0, 1);
-			sandStage[x][y] = stage;
-			sandNextStage[x][y] = stage;
+			sandStage[x][y] = 0;
+			sandNextStage[x][y] = 0;
 
 			shapes[x][y].setPosition(x * SquareSize, y * SquareSize);
 			shapes[x][y].setSize(sf::Vector2f(SquareSize, SquareSize));
@@ -57,6 +63,25 @@ int main()
 		}
 
 		window.clear(sf::Color::Black);
+
+		if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
+			sf::Vector2i mousePosition = sf::Mouse::getPosition(window);
+			int GridPositionX = mousePosition.x / SquareSize;
+			int GridPositionY = mousePosition.y / SquareSize;
+
+			if (GridPositionX >= 0 && GridPositionX <= SandWidth - 1 && GridPositionY >= 0 && GridPositionY <= SandHeight - 1) {
+				sandStage[GridPositionX][GridPositionY] = 1;
+			}
+		}
+
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Delete)) {
+			for (int x = 0; x < SandWidth; x++) {
+				for (int y = 0; y < SandHeight; y++) {
+					sandStage[x][y] = 0;
+					sandNextStage[x][y] = 0;
+				}
+			}
+		}
 
 		for (int x = 0; x < SandWidth; x++) {
 			for (int y = 0; y < SandHeight - 1; y++) {
@@ -112,8 +137,10 @@ int main()
 			}
 		}
 
+		window.draw(controllsText);
+
 		window.display();
 
-		Sleep(100);
+		Sleep(10);
     }
 }

@@ -1,8 +1,8 @@
 ﻿  Sand Simulation.cpp
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Sand Simulation\Sand Simulation\Sand Simulation.cpp(46,47): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Sand Simulation\Sand Simulation\Sand Simulation.cpp(46,31): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Sand Simulation\Sand Simulation\Sand Simulation.cpp(52,47): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Sand Simulation\Sand Simulation\Sand Simulation.cpp(52,31): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   Generating code
-  1 of 122 functions ( 0.8%) were compiled, the rest were copied from previous compilation.
+  1 of 160 functions ( 0.6%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     0 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
