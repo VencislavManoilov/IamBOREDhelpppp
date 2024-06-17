@@ -1,10 +1,11 @@
 ﻿  Voronoi.cpp
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Voronoi\Voronoi\Voronoi.cpp(17,22): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Voronoi\Voronoi\Voronoi.cpp(52,89): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Voronoi\Voronoi\Voronoi.cpp(52,63): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Voronoi\Voronoi\Voronoi.cpp(52,39): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Voronoi\Voronoi\Voronoi.cpp(52,36): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Voronoi\Voronoi\Voronoi.cpp(70,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Voronoi\Voronoi\Voronoi.cpp(70,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Voronoi\Voronoi\Voronoi.cpp(86,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Voronoi\Voronoi\Voronoi.cpp(18,22): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Voronoi\Voronoi\Voronoi.cpp(72,12): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Voronoi\Voronoi\Voronoi.cpp(163,89): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Voronoi\Voronoi\Voronoi.cpp(163,63): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Voronoi\Voronoi\Voronoi.cpp(163,39): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Voronoi\Voronoi\Voronoi.cpp(163,36): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Voronoi\Voronoi\Voronoi.cpp(181,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Voronoi\Voronoi\Voronoi.cpp(181,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Voronoi\Voronoi\Voronoi.cpp(197,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   Voronoi.vcxproj -> C:\Users\vmano\Documents\Programming\I am bored Helppp\Voronoi\x64\Debug\Voronoi.exe

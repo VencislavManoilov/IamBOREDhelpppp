@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <vector>
 
 static int randomInteger(int min, int max) {
 	return (rand() % (max - min + 1)) + min;
@@ -41,6 +42,116 @@ const int PointsNum = 50;
 
 Point points[PointsNum];
 Pixel pixels[800][600];
+
+enum SpawnPointsTypes {
+	Random,
+	Grid,
+	Circular,
+	Clustered,
+	Border,
+	Spiral,
+	Suprise
+};
+
+SpawnPointsTypes types;
+
+void SpawnPoints(SpawnPointsTypes type) {
+	// This is the suprise
+	if (type == 6) {
+		type = SpawnPointsTypes(randomInteger(0, 5));
+	}
+
+	switch (type) {
+	case 0: {
+		for (int i = 0; i < PointsNum; i++) {
+			points[i] = Point(sf::Vector2i(randomInteger(0, 799), randomInteger(0, 599)), sf::Color(randomInteger(0, 255), randomInteger(0, 255), randomInteger(0, 255)));
+		}
+	}
+	break;
+	case 1: {
+		int rows = sqrt(PointsNum);
+		int cols = (PointsNum + rows - 1) / rows; // ensures all points fit in the grid
+		int xStep = 800 / cols;
+		int yStep = 600 / rows;
+
+		for (int i = 0; i < PointsNum; i++) {
+			int row = i / cols;
+			int col = i % cols;
+			points[i] = Point(sf::Vector2i(col * xStep + xStep / 2, row * yStep + yStep / 2), sf::Color(randomInteger(0, 255), randomInteger(0, 255), randomInteger(0, 255)));
+		}
+	}
+	break;
+	case 2: {
+		sf::Vector2f center(400, 300);
+		float radius = 250.0f;
+
+		for (int i = 0; i < PointsNum; i++) {
+			float angle = 2 * 3.14159265f * i / PointsNum;
+			sf::Vector2f pointPos = center + sf::Vector2f(radius * cos(angle), radius * sin(angle));
+			points[i] = Point(sf::Vector2i(static_cast<int>(pointPos.x), static_cast<int>(pointPos.y)), sf::Color(randomInteger(0, 255), randomInteger(0, 255), randomInteger(0, 255)));
+		}
+	}
+	break;
+	case 3: {
+		int clusters = 5; // Number of clusters
+		std::vector<sf::Vector2i> clusterCenters;
+
+		// Create random cluster centers
+		for (int i = 0; i < clusters; i++) {
+			clusterCenters.push_back(sf::Vector2i(randomInteger(0, 799), randomInteger(0, 599)));
+		}
+
+		for (int i = 0; i < PointsNum; i++) {
+			sf::Vector2i center = clusterCenters[randomInteger(0, clusters - 1)];
+			int xOffset = randomInteger(-50, 50);
+			int yOffset = randomInteger(-50, 50);
+			points[i] = Point(sf::Vector2i(center.x + xOffset, center.y + yOffset), sf::Color(randomInteger(0, 255), randomInteger(0, 255), randomInteger(0, 255)));
+		}
+	}
+	break;
+	case 4: {
+		for (int i = 0; i < PointsNum; i++) {
+			int side = randomInteger(0, 3);
+			int x, y;
+			switch (side) {
+			case 0: // Top
+				x = randomInteger(0, 799);
+				y = 0;
+				break;
+			case 1: // Right
+				x = 799;
+				y = randomInteger(0, 599);
+				break;
+			case 2: // Bottom
+				x = randomInteger(0, 799);
+				y = 599;
+				break;
+			case 3: // Left
+				x = 0;
+				y = randomInteger(0, 599);
+				break;
+			}
+			points[i] = Point(sf::Vector2i(x, y), sf::Color(randomInteger(0, 255), randomInteger(0, 255), randomInteger(0, 255)));
+		}
+	}
+	break;
+	case 5: {
+		sf::Vector2f center(400, 300);
+		float radius = 10.0f;
+		float angleIncrement = 2 * 3.14159265f / PointsNum;
+
+		for (int i = 0; i < PointsNum; i++) {
+			float angle = i * angleIncrement;
+			radius += 5.0f; // Increase radius to create spiral effect
+			sf::Vector2f pointPos = center + sf::Vector2f(radius * cos(angle), radius * sin(angle));
+			points[i] = Point(sf::Vector2i(static_cast<int>(pointPos.x), static_cast<int>(pointPos.y)), sf::Color(randomInteger(0, 255), randomInteger(0, 255), randomInteger(0, 255)));
+		}
+	}
+	break;
+	default:
+	break;
+	}
+}
 
 void Calculate(bool NormalDistance) {
 	for (int x = 0; x < 800; x++) {
@@ -85,9 +196,7 @@ int main()
 
 	srand(time(NULL));
 
-	for (int i = 0; i < PointsNum; i++) {
-		points[i] = Point(sf::Vector2i(randomInteger(0, 799), randomInteger(0, 599)), sf::Color(randomInteger(0, 255), randomInteger(0, 255), randomInteger(0, 255)));
-	}
+	SpawnPoints(SpawnPointsTypes(6));
 
 	Calculate(true);
 
