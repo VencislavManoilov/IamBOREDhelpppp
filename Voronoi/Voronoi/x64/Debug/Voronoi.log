@@ -1,7 +1,10 @@
 ﻿  Voronoi.cpp
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Voronoi\Voronoi\Voronoi.cpp(46,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Voronoi\Voronoi\Voronoi.cpp(56,94): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Voronoi\Voronoi\Voronoi.cpp(56,68): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Voronoi\Voronoi\Voronoi.cpp(56,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Voronoi\Voronoi\Voronoi.cpp(56,41): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Voronoi\Voronoi\Voronoi.cpp(17,22): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Voronoi\Voronoi\Voronoi.cpp(52,89): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Voronoi\Voronoi\Voronoi.cpp(52,63): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Voronoi\Voronoi\Voronoi.cpp(52,39): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Voronoi\Voronoi\Voronoi.cpp(52,36): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Voronoi\Voronoi\Voronoi.cpp(70,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Voronoi\Voronoi\Voronoi.cpp(70,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Voronoi\Voronoi\Voronoi.cpp(86,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   Voronoi.vcxproj -> C:\Users\vmano\Documents\Programming\I am bored Helppp\Voronoi\x64\Debug\Voronoi.exe
