@@ -72,12 +72,18 @@ int main()
 
 		if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
 			sf::Vector2i mousePosition = sf::Mouse::getPosition(window);
+
 			int GridPositionX = mousePosition.x / SquareSize;
 			int GridPositionY = mousePosition.y / SquareSize;
 
-			if (GridPositionX >= 0 && GridPositionX <= SandWidth - 1 && GridPositionY >= 0 && GridPositionY <= SandHeight - 1) {
-				sandStage[GridPositionX][GridPositionY] = 1;
+			for (int x = GridPositionX - 5; x < GridPositionX + 5; x++) {
+				for (int y = GridPositionY - 5; y < GridPositionY + 5; y++) {
+					if (x >= 0 && x <= SandWidth - 1 && y >= 0 && y <= SandHeight - 1) {
+						sandStage[x][y] = 1;
+					}
+				}
 			}
+
 		}
 
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Delete)) {
