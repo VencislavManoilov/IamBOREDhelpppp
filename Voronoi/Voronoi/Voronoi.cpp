@@ -215,7 +215,7 @@ int main()
 
 	srand(time(NULL));
 
-	SpawnPoints(SpawnPointsTypes(6));
+	SpawnPoints(SpawnPointsTypes(0));
 
 	Calculate(true);
 
