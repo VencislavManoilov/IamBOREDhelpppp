@@ -1,7 +1,11 @@
 ﻿  Fast Mandelbrot set.cpp
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fast Mandelbrot set\Fast Mandelbrot set\Fast Mandelbrot set.cpp(9,15): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fast Mandelbrot set\Fast Mandelbrot set\Fast Mandelbrot set.cpp(129,15): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fast Mandelbrot set\Fast Mandelbrot set\Fast Mandelbrot set.cpp(130,14): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fast Mandelbrot set\Fast Mandelbrot set\Fast Mandelbrot set.cpp(154,15): warning C4305: '=': truncation from 'double' to 'float'
   Generating code
-  3 of 17 functions (17.6%) were compiled, the rest were copied from previous compilation.
-    1 functions were new in current compilation
+  75 of 82 functions (91.5%) were compiled, the rest were copied from previous compilation.
+    66 functions were new in current compilation
     0 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   Fast Mandelbrot set.vcxproj -> C:\Users\vmano\Documents\Programming\I am bored Helppp\Fast Mandelbrot set\x64\Release\Fast Mandelbrot set.exe

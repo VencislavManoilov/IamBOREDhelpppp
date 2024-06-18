@@ -1,2 +1,6 @@
 ﻿  Fast Mandelbrot set.cpp
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fast Mandelbrot set\Fast Mandelbrot set\Fast Mandelbrot set.cpp(9,15): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fast Mandelbrot set\Fast Mandelbrot set\Fast Mandelbrot set.cpp(129,15): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fast Mandelbrot set\Fast Mandelbrot set\Fast Mandelbrot set.cpp(130,14): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fast Mandelbrot set\Fast Mandelbrot set\Fast Mandelbrot set.cpp(154,15): warning C4305: '=': truncation from 'double' to 'float'
   Fast Mandelbrot set.vcxproj -> C:\Users\vmano\Documents\Programming\I am bored Helppp\Fast Mandelbrot set\x64\Debug\Fast Mandelbrot set.exe
