@@ -1,7 +1,7 @@
 ﻿  Fast Mandelbrot set.cpp
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Fast Mandelbrot set\Fast Mandelbrot set\Fast Mandelbrot set.cpp(45,68): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Fast Mandelbrot set\Fast Mandelbrot set\Fast Mandelbrot set.cpp(45,52): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Fast Mandelbrot set\Fast Mandelbrot set\Fast Mandelbrot set.cpp(45,36): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fast Mandelbrot set\Fast Mandelbrot set\Fast Mandelbrot set.cpp(47,68): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fast Mandelbrot set\Fast Mandelbrot set\Fast Mandelbrot set.cpp(47,52): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fast Mandelbrot set\Fast Mandelbrot set\Fast Mandelbrot set.cpp(47,36): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
   Generating code
   2 of 16 functions (12.5%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation

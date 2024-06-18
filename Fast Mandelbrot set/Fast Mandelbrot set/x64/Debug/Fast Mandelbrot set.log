@@ -1,2 +1,5 @@
 ﻿  Fast Mandelbrot set.cpp
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fast Mandelbrot set\Fast Mandelbrot set\Fast Mandelbrot set.cpp(47,68): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fast Mandelbrot set\Fast Mandelbrot set\Fast Mandelbrot set.cpp(47,52): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fast Mandelbrot set\Fast Mandelbrot set\Fast Mandelbrot set.cpp(47,36): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
   Fast Mandelbrot set.vcxproj -> C:\Users\vmano\Documents\Programming\I am bored Helppp\Fast Mandelbrot set\x64\Debug\Fast Mandelbrot set.exe

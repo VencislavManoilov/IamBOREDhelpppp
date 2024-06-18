@@ -10,8 +10,8 @@ static float distanceFromCenter(float X, float Y) {
 }
 
 static float Mandelbrot(float X, float Y) {
-	float NewX = X * X - Y * Y + X;
-	float NewY = 2 * X * Y + Y;
+	float NewX = X;
+	float NewY = Y;
 	float num = 0;
 
 	for (int i = 0; i < Persision; i++) {
@@ -19,9 +19,11 @@ static float Mandelbrot(float X, float Y) {
 			return num;
 		}
 
-		float NewNewX = NewX;
-		NewX = NewX * NewX - NewY * NewY + NewY;
-		NewY = 2 * NewNewX * NewY + NewY;
+		float OldX = NewX;
+		float OldY = NewY;
+
+		NewX = OldX * OldX - OldY * OldY + X;
+		NewY = 2 * OldX * OldY + Y;
 		
 		num++;
 	}
@@ -39,7 +41,7 @@ sf::Sprite canvasSprite;
 static void Calculate() {
 	for (int x = 0; x < 800; x++) {
 		for (int y = 0; y < 600; y++) {
-			pixels[x][y] = Mandelbrot((x - 400) / Zoom, (y - 300) / Zoom);
+			pixels[x][y] = Mandelbrot((x - 500) / Zoom, (y - 300) / Zoom);
 
 			float GrayScaleColor = 255 - pixels[x][y];
 			canvas.setPixel(x, y, sf::Color(GrayScaleColor, GrayScaleColor, GrayScaleColor));
