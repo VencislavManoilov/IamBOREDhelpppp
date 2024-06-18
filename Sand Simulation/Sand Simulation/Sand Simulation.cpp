@@ -6,14 +6,18 @@
 #include <ctime>
 #include <random>
 
-const int SquareSize = 10;
+const int SquareSize = 1;
 
 const int SandWidth = 800 / SquareSize;
 const int SandHeight = 600 / SquareSize;
 
 std::vector<std::vector<int>> sandStage(SandWidth, std::vector<int>(SandHeight));
 std::vector<std::vector<int>> sandNextStage(SandWidth, std::vector<int>(SandHeight));
-sf::RectangleShape shapes[SandWidth][SandHeight];
+
+// Making a canvas to draw stuff Fasteeer
+sf::Image canvas;
+sf::Sprite canvasSprite;
+sf::Texture canvasTexture;
 
 void seedRandomGenerator() {
 	std::srand(static_cast<unsigned int>(std::time(nullptr)));  // Using current time as seed
@@ -37,6 +41,12 @@ int main()
     sf::RenderWindow window(sf::VideoMode(800, 600), "Sand Simulation");
     sf::Event e;
 
+	canvas.create(800, 600, sf::Color::Black);
+	if (!canvasTexture.loadFromImage(canvas)) {
+		return -1;
+	}
+	canvasSprite.setTexture(canvasTexture);
+
 	sf::Font font;
 	if (!font.loadFromFile("Fonts/arial.ttf")) {
 		return -1;
@@ -48,10 +58,6 @@ int main()
 		for (int y = 0; y < SandHeight; y++) {
 			sandStage[x][y] = 0;
 			sandNextStage[x][y] = 0;
-
-			shapes[x][y].setPosition(x * SquareSize, y * SquareSize);
-			shapes[x][y].setSize(sf::Vector2f(SquareSize, SquareSize));
-			shapes[x][y].setFillColor(sf::Color::Yellow);
 		}
 	}
 
@@ -125,17 +131,30 @@ int main()
 
 		for (int x = 0; x < SandWidth; x++) {
 			for (int y = 0; y < SandHeight; y++) {
-				if (sandStage[x][y] == 1) {
-					window.draw(shapes[x][y]);
+				for (int pixelX = 0; pixelX < SquareSize; pixelX++) {
+					for (int pixelY = 0; pixelY < SquareSize; pixelY++) {
+						if (sandStage[x][y] == 1) {
+							canvas.setPixel(x * SquareSize + pixelX, y * SquareSize + pixelY, sf::Color::Yellow);
+						} else {
+							canvas.setPixel(x * SquareSize + pixelX, y * SquareSize + pixelY, sf::Color::Black);
+						}
+					}
 				}
 				sandStage[x][y] = sandNextStage[x][y];
 			}
 		}
 
+		if (!canvasTexture.loadFromImage(canvas)) {
+			return -1;
+		}
+		canvasSprite.setTexture(canvasTexture);
+
+		window.draw(canvasSprite);
+
 		window.draw(controllsText);
 
 		window.display();
 
-		Sleep(5);
+		//Sleep(5);
     }
 }
