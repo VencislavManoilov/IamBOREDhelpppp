@@ -1,4 +1,5 @@
 #include <SFML/Graphics.hpp>
+#include <SFML/Graphics/Image.hpp>
 #include <iostream>
 #include <cmath>
 #include <stdio.h>
@@ -18,6 +19,11 @@ float manhattanDistance(int x1, int y1, int x2, int y2) {
 	return abs(x1 - x2) + abs(y1 - y2);
 }
 
+// Creating the canvas to draw voronoi
+sf::Image canvas;
+sf::Sprite canvasSprite;
+sf::Texture canvasTexture;
+
 class Point {
 public:
 	sf::Vector2i position;
@@ -31,11 +37,10 @@ public:
 
 class Pixel {
 public:
-	sf::RectangleShape shape;
 	float closestDistance;
 	sf::Color color;
 
-	Pixel() : shape(), closestDistance(99999), color(0, 0, 0) {}
+	Pixel() : closestDistance(99999), color(0, 0, 0) {}
 };
 
 const int PointsNum = 50;
@@ -156,6 +161,7 @@ void SpawnPoints(SpawnPointsTypes type) {
 void Calculate(bool NormalDistance) {
 	for (int x = 0; x < 800; x++) {
 		for (int y = 0; y < 600; y++) {
+			pixels[x][y].closestDistance = 99999;
 			for (int i = 0; i < PointsNum; i++) {
 				float distancePixelPoint;
 
@@ -178,13 +184,20 @@ void Draw(sf::RenderWindow& window) {
 
 	for (int x = 0; x < 800; x++) {
 		for (int y = 0; y < 600; y++) {
-			pixels[x][y].shape.setPosition(x, y);
-			pixels[x][y].shape.setSize(sf::Vector2f(1, 1));
-			pixels[x][y].shape.setFillColor(pixels[x][y].color);
+			//pixels[x][y].shape.setPosition(x, y);
+			//pixels[x][y].shape.setSize(sf::Vector2f(1, 1));
+			//pixels[x][y].shape.setFillColor(pixels[x][y].color);
 
-			window.draw(pixels[x][y].shape);
+			canvas.setPixel(x, y, pixels[x][y].color);
+
 		}
 	}
+
+	if (!canvasTexture.loadFromImage(canvas)) {
+		return;
+	}
+	canvasSprite.setTexture(canvasTexture);
+	window.draw(canvasSprite);
 
 	window.display();
 }
@@ -193,6 +206,12 @@ int main()
 {
 	sf::RenderWindow window(sf::VideoMode(800, 600), "Voronoi");
 	sf::Event e;
+
+	canvas.create(800, 600, sf::Color::White);
+	if (!canvasTexture.loadFromImage(canvas)) {
+		return -1;
+	}
+	canvasSprite.setTexture(canvasTexture);
 
 	srand(time(NULL));
 
@@ -208,7 +227,5 @@ int main()
 				window.close();
 			}
 		}
-
-		
 	}
 }
