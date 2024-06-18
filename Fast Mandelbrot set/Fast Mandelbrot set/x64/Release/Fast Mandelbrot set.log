@@ -1,10 +1,7 @@
 ﻿  Fast Mandelbrot set.cpp
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Fast Mandelbrot set\Fast Mandelbrot set\Fast Mandelbrot set.cpp(47,68): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Fast Mandelbrot set\Fast Mandelbrot set\Fast Mandelbrot set.cpp(47,52): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Fast Mandelbrot set\Fast Mandelbrot set\Fast Mandelbrot set.cpp(47,36): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
   Generating code
-  2 of 16 functions (12.5%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
+  3 of 17 functions (17.6%) were compiled, the rest were copied from previous compilation.
+    1 functions were new in current compilation
     0 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   Fast Mandelbrot set.vcxproj -> C:\Users\vmano\Documents\Programming\I am bored Helppp\Fast Mandelbrot set\x64\Release\Fast Mandelbrot set.exe

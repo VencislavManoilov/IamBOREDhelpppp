@@ -1,5 +1,6 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include <cmath>
 
 const int Persision = 255;
 
@@ -38,13 +39,40 @@ sf::Image canvas;
 sf::Texture canvasTexture;
 sf::Sprite canvasSprite;
 
+// Convert HSV to RGB
+sf::Color hsvToRgb(float h, float s, float v) {
+	float r, g, b;
+
+	int i = static_cast<int>(h * 6);
+	float f = h * 6 - i;
+	float p = v * (1 - s);
+	float q = v * (1 - f * s);
+	float t = v * (1 - (1 - f) * s);
+
+	switch (i % 6) {
+	case 0: r = v, g = t, b = p; break;
+	case 1: r = q, g = v, b = p; break;
+	case 2: r = p, g = v, b = t; break;
+	case 3: r = p, g = q, b = v; break;
+	case 4: r = t, g = p, b = v; break;
+	case 5: r = v, g = p, b = q; break;
+	}
+
+	return sf::Color(static_cast<sf::Uint8>(r * 255), static_cast<sf::Uint8>(g * 255), static_cast<sf::Uint8>(b * 255));
+}
+
 static void Calculate() {
 	for (int x = 0; x < 800; x++) {
 		for (int y = 0; y < 600; y++) {
 			pixels[x][y] = Mandelbrot((x - 500) / Zoom, (y - 300) / Zoom);
 
-			float GrayScaleColor = 255 - pixels[x][y];
-			canvas.setPixel(x, y, sf::Color(GrayScaleColor, GrayScaleColor, GrayScaleColor));
+			// Normalize the iteration count to [0, 1]
+			float norm = pixels[x][y] / Persision;
+
+			// Map the normalized value to a color
+			sf::Color color = hsvToRgb(norm, 1.0f, norm < 1 ? 1.0f : 0.0f);
+
+			canvas.setPixel(x, y, color);
 		}
 	}
 }
