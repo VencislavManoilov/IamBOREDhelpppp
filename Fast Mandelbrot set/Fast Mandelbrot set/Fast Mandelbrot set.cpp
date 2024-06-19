@@ -84,7 +84,7 @@ static void Calculate() {
 	}
 }
 
-static void Draw(sf::RenderWindow& window, sf::Text controllsText) {
+static void Draw(sf::RenderWindow& window, sf::Text controllsText, sf::Text controllsSecondText) {
 	window.clear();
 
 	if (!canvasTexture.loadFromImage(canvas))
@@ -96,6 +96,7 @@ static void Draw(sf::RenderWindow& window, sf::Text controllsText) {
 	window.draw(canvasSprite);
 	
 	window.draw(controllsText);
+	window.draw(controllsSecondText);
 
 	window.display();
 }
@@ -111,11 +112,13 @@ int main()
 		return -1;
 	}
 
-	sf::Text controllsText("Zoom - Space; Zoom Out - Left Shift; Cool Point - E; Reset - Enter", font, 25);
+	sf::Text controllsText("Zoom - Space; Zoom Out - Left Shift; Cool Point - E; Reset - R", font, 25);
+	sf::Text controllsSecondText("Move - WASD", font, 25);
+	controllsSecondText.setPosition(0, 30);
 
 	Calculate();
 
-	Draw(window, controllsText);
+	Draw(window, controllsText, controllsSecondText);
 
 	while (window.isOpen()) {
 		while (window.pollEvent(e)) {
@@ -126,17 +129,15 @@ int main()
 
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
 			Zoom *= 1.2f;
-			offsetX = -1.24999872502;
-			offsetY = 0.0261999997;
 
 			Calculate();
-			Draw(window, controllsText);
+			Draw(window, controllsText, controllsSecondText);
 		}
 		
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::LShift)) {
 			Zoom /= 1.2f;
 			Calculate();
-			Draw(window, controllsText);
+			Draw(window, controllsText, controllsSecondText);
 		}
 		
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::E)) {
@@ -145,17 +146,37 @@ int main()
 			offsetY = 0.13182590420533f;
 
 			Calculate();
-			Draw(window, controllsText);
+			Draw(window, controllsText, controllsSecondText);
 		}
 		
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter)) {
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::R)) {
 			Zoom = 200;
 
 			offsetX = -0.7;
 			offsetY = 0;
 
 			Calculate();
-			Draw(window, controllsText);
+			Draw(window, controllsText, controllsSecondText);
+		}
+
+		float MoveSpeed = 20. / Zoom;
+
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
+			offsetY -= MoveSpeed;
+			Calculate();
+			Draw(window, controllsText, controllsSecondText);
+		} if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
+			offsetX -= MoveSpeed;
+			Calculate();
+			Draw(window, controllsText, controllsSecondText);
+		} if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
+			offsetY += MoveSpeed;
+			Calculate();
+			Draw(window, controllsText, controllsSecondText);
+		} if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
+			offsetX += MoveSpeed;
+			Calculate();
+			Draw(window, controllsText, controllsSecondText);
 		}
 	}
 }
