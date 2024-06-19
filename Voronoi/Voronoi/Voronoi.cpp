@@ -43,7 +43,7 @@ public:
 	Pixel() : closestDistance(99999), color(0, 0, 0) {}
 };
 
-const int PointsNum = 50;
+const int PointsNum = 56;
 
 Point points[PointsNum];
 Pixel pixels[800][600];
@@ -179,7 +179,7 @@ void Calculate(bool NormalDistance) {
 	}
 }
 
-void Draw(sf::RenderWindow& window) {
+void Draw(sf::RenderWindow& window, sf::Text& controllsText, sf::Text& controllsSecondText) {
 	window.clear();
 
 	for (int x = 0; x < 800; x++) {
@@ -199,7 +199,24 @@ void Draw(sf::RenderWindow& window) {
 	canvasSprite.setTexture(canvasTexture);
 	window.draw(canvasSprite);
 
+	window.draw(controllsText);
+	window.draw(controllsSecondText);
+
 	window.display();
+}
+
+int Type = 0;
+
+bool Spam = false;
+
+bool pressed = false;
+
+void DoAll(sf::RenderWindow& window, sf::Text& controllsText, sf::Text& controllsSecondText) {
+	SpawnPoints(SpawnPointsTypes(Type));
+
+	Calculate(true);
+
+	Draw(window, controllsText, controllsSecondText);
 }
 
 int main()
@@ -213,19 +230,60 @@ int main()
 	}
 	canvasSprite.setTexture(canvasTexture);
 
+	sf::Font font;
+	if (!font.loadFromFile("Fonts/arial.ttf")) {
+		return -1;
+	}
+
+	sf::Text controllsText("Default - 1; Grid - 2; Circular - 3; Clustered - 4; Grid - 5; Spiral - 6; Suprise - 7", font, 20);
+	sf::Text controllsSecondText("Spam - Enter", font, 20);
+	controllsSecondText.setPosition(0, 25);
+
 	srand(time(NULL));
 
-	SpawnPoints(SpawnPointsTypes(0));
-
-	Calculate(true);
-
-	Draw(window);
+	DoAll(window, controllsText, controllsSecondText);
 
 	while (window.isOpen()) {
 		while (window.pollEvent(e)) {
 			if (e.type == sf::Event::Closed) {
 				window.close();
 			}
+		}
+
+		if (Spam) {
+			DoAll(window, controllsText, controllsSecondText);
+		}
+
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter)) {
+			if (!pressed) {
+				Spam = !Spam;
+				pressed = true;
+			}
+		} else {
+			pressed = false;
+		}
+
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num1)) {
+			Type = 0;
+			DoAll(window, controllsText, controllsSecondText);
+		} if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num2)) {
+			Type = 1;
+			DoAll(window, controllsText, controllsSecondText);
+		} if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num3)) {
+			Type = 2;
+			DoAll(window, controllsText, controllsSecondText);
+		} if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num4)) {
+			Type = 3;
+			DoAll(window, controllsText, controllsSecondText);
+		} if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num5)) {
+			Type = 4;
+			DoAll(window, controllsText, controllsSecondText);
+		} if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num6)) {
+			Type = 5;
+			DoAll(window, controllsText, controllsSecondText);
+		} if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num7)) {
+			Type = 6;
+			DoAll(window, controllsText, controllsSecondText);
 		}
 	}
 }

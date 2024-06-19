@@ -5,5 +5,5 @@ C:\Users\vmano\Documents\Programming\I am bored Helppp\Voronoi\Voronoi\Voronoi.c
 C:\Users\vmano\Documents\Programming\I am bored Helppp\Voronoi\Voronoi\Voronoi.cpp(169,63): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 C:\Users\vmano\Documents\Programming\I am bored Helppp\Voronoi\Voronoi\Voronoi.cpp(169,39): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 C:\Users\vmano\Documents\Programming\I am bored Helppp\Voronoi\Voronoi\Voronoi.cpp(169,36): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Voronoi\Voronoi\Voronoi.cpp(216,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Voronoi\Voronoi\Voronoi.cpp(242,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   Voronoi.vcxproj -> C:\Users\vmano\Documents\Programming\I am bored Helppp\Voronoi\x64\Debug\Voronoi.exe
