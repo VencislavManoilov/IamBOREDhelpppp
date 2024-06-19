@@ -4,27 +4,27 @@
 
 const int Persision = 255;
 
-float Zoom = 200;
+double Zoom = 200;
 
-float offsetX = -0.7;
-float offsetY = 0;
+double offsetX = -0.7;
+double offsetY = 0;
 
-static float distanceFromCenter(float X, float Y) {
+static double distanceFromCenter(double X, double Y) {
 	return std::sqrt(X * X + Y * Y);
 }
 
-static float Mandelbrot(float X, float Y) {
-	float NewX = X;
-	float NewY = Y;
-	float num = 0;
+static double Mandelbrot(double X, double Y) {
+	double NewX = X;
+	double NewY = Y;
+	double num = 0;
 
 	for (int i = 0; i < Persision; i++) {
 		if (distanceFromCenter(NewX, NewY) > 2) {
 			return num;
 		}
 
-		float OldX = NewX;
-		float OldY = NewY;
+		double OldX = NewX;
+		double OldY = NewY;
 
 		NewX = OldX * OldX - OldY * OldY + X;
 		NewY = 2 * OldX * OldY + Y;
@@ -35,7 +35,7 @@ static float Mandelbrot(float X, float Y) {
 	return Persision;
 }
 
-float pixels[800][600];
+double pixels[800][600];
 
 // Making canvas to draw mandelbrot set faster
 sf::Image canvas;
@@ -45,14 +45,14 @@ sf::Sprite canvasSprite;
 sf::Font font;
 
 // Convert HSV to RGB
-sf::Color hsvToRgb(float h, float s, float v) {
-	float r, g, b;
+sf::Color hsvToRgb(double h, double s, double v) {
+	double r, g, b;
 
 	int i = static_cast<int>(h * 6);
-	float f = h * 6 - i;
-	float p = v * (1 - s);
-	float q = v * (1 - f * s);
-	float t = v * (1 - (1 - f) * s);
+	double f = h * 6 - i;
+	double p = v * (1 - s);
+	double q = v * (1 - f * s);
+	double t = v * (1 - (1 - f) * s);
 
 	switch (i % 6) {
 	case 0: r = v, g = t, b = p; break;
@@ -69,12 +69,12 @@ sf::Color hsvToRgb(float h, float s, float v) {
 static void Calculate() {
 	for (int x = 0; x < 800; x++) {
 		for (int y = 0; y < 600; y++) {
-			float coordX = (x - 400) / Zoom + offsetX;
-			float coordY = (y - 300) / Zoom + offsetY;
+			double coordX = (x - 400) / Zoom + offsetX;
+			double coordY = (y - 300) / Zoom + offsetY;
 			pixels[x][y] = Mandelbrot(coordX, coordY);
 
 			// Normalize the iteration count to [0, 1]
-			float norm = pixels[x][y] / Persision;
+			double norm = pixels[x][y] / Persision;
 
 			// Map the normalized value to a color
 			sf::Color color = hsvToRgb(norm, 1.0f, norm < 1 ? 1.0f : 0.0f);
@@ -153,13 +153,13 @@ int main()
 			Zoom = 200;
 
 			offsetX = -0.7;
-			offsetY = 0;
+			offsetY = 0.;
 
 			Calculate();
 			Draw(window, controllsText, controllsSecondText);
 		}
 
-		float MoveSpeed = 20. / Zoom;
+		double MoveSpeed = 20. / Zoom;
 
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
 			offsetY -= MoveSpeed;
