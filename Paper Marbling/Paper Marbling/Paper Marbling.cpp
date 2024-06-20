@@ -22,9 +22,21 @@ public:
 
 		shape.setFillColor(color);
 	}
+
+	void Marble(Drop other) {
+
+	}
 };
 
-Drop drop = Drop(sf::Vector2f(400, 300), 50, 30, sf::Color::Black);
+std::vector<Drop> drops;
+
+void PlaceNewDrop(float X, float Y) {
+	drops.push_back(Drop(sf::Vector2f(X, Y), 50, 30, sf::Color::Black));
+
+	for (int i = 0; i < drops.size() - 1; i++) {
+		drops[i].Marble(drops[drops.size() - 1]);
+	}
+}
 
 int main()
 {
@@ -40,7 +52,7 @@ int main()
 
 		window.clear(sf::Color::White);
 
-		window.draw(drop.shape);
+
 
 		window.display();
 	}
