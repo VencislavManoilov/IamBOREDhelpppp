@@ -24,7 +24,15 @@ public:
 	}
 
 	void Marble(Drop other) {
+		for (int i = 0; i < points; i++) {
+			float X = shape.getPoint(i).x;
+			float Y = shape.getPoint(i).y;
 
+			float NewX = other.position.x + (X - other.position.x) * std::sqrt(1 + other.R * other.R / std::abs((X - other.position.x) * (X - other.position.x)));
+			float NewY = other.position.y + (Y - other.position.y) * std::sqrt(1 + other.R * other.R / std::abs((Y - other.position.y) * (Y - other.position.y)));
+
+			shape.setPoint(i, sf::Vector2f(NewX, NewY));
+		}
 	}
 };
 
@@ -37,6 +45,8 @@ void PlaceNewDrop(float X, float Y) {
 		drops[i].Marble(drops[drops.size() - 1]);
 	}
 }
+
+bool clicked = false;
 
 int main()
 {
@@ -52,7 +62,21 @@ int main()
 
 		window.clear(sf::Color::White);
 
+		for (int i = 0; i < drops.size(); i++) {
+			window.draw(drops[i].shape);
+		}
 
+		if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
+			if (!clicked) {
+				sf::Vector2i mousePosition = sf::Mouse::getPosition(window);
+				PlaceNewDrop(mousePosition.x, mousePosition.y);
+				std::cout << "X: " << mousePosition.x << " Y:" << mousePosition.y << std::endl;
+			}
+			clicked = true;
+		}
+		else {
+			clicked = false;
+		}
 
 		window.display();
 	}
