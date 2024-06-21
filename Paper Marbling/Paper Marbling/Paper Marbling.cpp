@@ -1,6 +1,10 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 
+static int randomInteger(int min, int max) {
+	return (rand() % (max - min + 1)) + min;
+}
+
 class Drop {
 public:
 	sf::Vector2f position;
@@ -25,13 +29,17 @@ public:
 
 	void Marble(Drop other) {
 		for (int i = 0; i < points; i++) {
-			float X = shape.getPoint(i).x;
-			float Y = shape.getPoint(i).y;
+			sf::Vector2f point = shape.getPoint(i);
+			float dx = point.x - other.position.x;
+			float dy = point.y - other.position.y;
+			float distance = std::sqrt(dx * dx + dy * dy);
 
-			float NewX = other.position.x + (X - other.position.x) * std::sqrt(1 + other.R * other.R / std::abs((X - other.position.x) * (X - other.position.x)));
-			float NewY = other.position.y + (Y - other.position.y) * std::sqrt(1 + other.R * other.R / std::abs((Y - other.position.y) * (Y - other.position.y)));
+			float factor = 1 + (other.R * other.R) / (distance * distance + 1);
 
-			shape.setPoint(i, sf::Vector2f(NewX, NewY));
+			float newX = other.position.x + dx * factor;
+			float newY = other.position.y + dy * factor;
+
+			shape.setPoint(i, sf::Vector2f(newX, newY));
 		}
 	}
 };
@@ -39,11 +47,17 @@ public:
 std::vector<Drop> drops;
 
 void PlaceNewDrop(float X, float Y) {
-	drops.push_back(Drop(sf::Vector2f(X, Y), 50, 30, sf::Color::Black));
+    int ColorR = randomInteger(0, 255);
+    int ColorG = randomInteger(0, 255);
+    int ColorB = randomInteger(0, 255);
 
-	for (int i = 0; i < drops.size() - 1; i++) {
-		drops[i].Marble(drops[drops.size() - 1]);
-	}
+    Drop newDrop(sf::Vector2f(X, Y), 50, 30, sf::Color(ColorR, ColorG, ColorB));
+
+    for (Drop& drop : drops) {
+        drop.Marble(newDrop);
+    }
+
+    drops.push_back(newDrop);
 }
 
 bool clicked = false;
@@ -70,7 +84,6 @@ int main()
 			if (!clicked) {
 				sf::Vector2i mousePosition = sf::Mouse::getPosition(window);
 				PlaceNewDrop(mousePosition.x, mousePosition.y);
-				std::cout << "X: " << mousePosition.x << " Y:" << mousePosition.y << std::endl;
 			}
 			clicked = true;
 		}
