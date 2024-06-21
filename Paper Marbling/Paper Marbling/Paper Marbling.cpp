@@ -75,6 +75,11 @@ void PlaceNewDrop(float X, float Y) {
 }
 
 bool clicked = false;
+bool spacePressed = false;
+bool rPressed = false;
+bool hPressed = false;
+
+bool ShowControlls = true;
 
 int main()
 {
@@ -83,9 +88,13 @@ int main()
 
 	srand(static_cast<unsigned int>(time(0)));
 
-	for (int i = 0; i < 50; i++) {
-		PlaceNewDrop(randomInteger(100, 700), randomInteger(50, 550));
+	sf::Font font;
+	if (!font.loadFromFile("Fonts/arial.ttf")) {
+		return -1;
 	}
+
+	sf::Text controllsText("Place Drop - Mouse; Spawn 10 Drops - Space; Reset - R; Hide Controlls - H", font, 20);
+	controllsText.setFillColor(sf::Color::Black);
 
 	while (window.isOpen()) {
 		while (window.pollEvent(e)) {
@@ -100,15 +109,44 @@ int main()
 			window.draw(drops[i].shape);
 		}
 
+		if (ShowControlls)
+			window.draw(controllsText);
+
 		if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
 			if (!clicked) {
 				sf::Vector2i mousePosition = sf::Mouse::getPosition(window);
 				PlaceNewDrop(mousePosition.x, mousePosition.y);
 			}
 			clicked = true;
-		}
-		else {
+		} else {
 			clicked = false;
+		}
+
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
+			if (!spacePressed) {
+				for (int i = 0; i < 10; i++) {
+					PlaceNewDrop(randomInteger(100, 700), randomInteger(50, 550));
+				}
+			}
+			spacePressed = true;
+		} else {
+			spacePressed = false;
+		}
+		
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::R)) {
+			if (!rPressed)
+				drops.clear();
+			rPressed = true;
+		} else {
+			rPressed = false;
+		}
+		
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::H)) {
+			if (!hPressed)
+				ShowControlls = !ShowControlls;
+			hPressed = true;
+		} else {
+			hPressed = false;
 		}
 
 		window.display();
