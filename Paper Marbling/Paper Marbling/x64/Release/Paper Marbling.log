@@ -1,18 +1,20 @@
 ﻿  Paper Marbling.cpp
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Paper Marbling\Paper Marbling\Paper Marbling.cpp(22,31): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Paper Marbling\Paper Marbling\Paper Marbling.cpp(97,48): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Paper Marbling\Paper Marbling\Paper Marbling.cpp(97,48): warning C4244:         with
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Paper Marbling\Paper Marbling\Paper Marbling.cpp(97,48): warning C4244:         [
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Paper Marbling\Paper Marbling\Paper Marbling.cpp(97,48): warning C4244:             T=int
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Paper Marbling\Paper Marbling\Paper Marbling.cpp(97,48): warning C4244:         ]
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Paper Marbling\Paper Marbling\Paper Marbling.cpp(97,31): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Paper Marbling\Paper Marbling\Paper Marbling.cpp(97,31): warning C4244:         with
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Paper Marbling\Paper Marbling\Paper Marbling.cpp(97,31): warning C4244:         [
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Paper Marbling\Paper Marbling\Paper Marbling.cpp(97,31): warning C4244:             T=int
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Paper Marbling\Paper Marbling\Paper Marbling.cpp(97,31): warning C4244:         ]
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Paper Marbling\Paper Marbling\Paper Marbling.cpp(25,31): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Paper Marbling\Paper Marbling\Paper Marbling.cpp(87,54): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Paper Marbling\Paper Marbling\Paper Marbling.cpp(87,29): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Paper Marbling\Paper Marbling\Paper Marbling.cpp(106,48): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Paper Marbling\Paper Marbling\Paper Marbling.cpp(106,48): warning C4244:         with
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Paper Marbling\Paper Marbling\Paper Marbling.cpp(106,48): warning C4244:         [
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Paper Marbling\Paper Marbling\Paper Marbling.cpp(106,48): warning C4244:             T=int
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Paper Marbling\Paper Marbling\Paper Marbling.cpp(106,48): warning C4244:         ]
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Paper Marbling\Paper Marbling\Paper Marbling.cpp(106,31): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Paper Marbling\Paper Marbling\Paper Marbling.cpp(106,31): warning C4244:         with
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Paper Marbling\Paper Marbling\Paper Marbling.cpp(106,31): warning C4244:         [
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Paper Marbling\Paper Marbling\Paper Marbling.cpp(106,31): warning C4244:             T=int
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Paper Marbling\Paper Marbling\Paper Marbling.cpp(106,31): warning C4244:         ]
   Generating code
-  3 of 93 functions ( 3.2%) were compiled, the rest were copied from previous compilation.
+  3 of 94 functions ( 3.2%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    1 functions had inline decision re-evaluated but remain unchanged
+    0 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   Paper Marbling.vcxproj -> C:\Users\vmano\Documents\Programming\I am bored Helppp\Paper Marbling\x64\Release\Paper Marbling.exe

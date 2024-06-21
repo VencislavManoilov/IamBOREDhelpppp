@@ -1,5 +1,8 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include <ctime>
+#include <cmath>
+#include <vector>
 
 static int randomInteger(int min, int max) {
 	return (rand() % (max - min + 1)) + min;
@@ -77,6 +80,12 @@ int main()
 {
 	sf::RenderWindow window(sf::VideoMode(800, 600), "Paper Marbling");
 	sf::Event e;
+
+	srand(static_cast<unsigned int>(time(0)));
+
+	for (int i = 0; i < 50; i++) {
+		PlaceNewDrop(randomInteger(100, 700), randomInteger(50, 550));
+	}
 
 	while (window.isOpen()) {
 		while (window.pollEvent(e)) {
