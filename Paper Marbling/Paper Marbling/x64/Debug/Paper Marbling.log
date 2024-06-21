@@ -1,13 +1,13 @@
 ﻿  Paper Marbling.cpp
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Paper Marbling\Paper Marbling\Paper Marbling.cpp(18,31): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Paper Marbling\Paper Marbling\Paper Marbling.cpp(72,48): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Paper Marbling\Paper Marbling\Paper Marbling.cpp(72,48): warning C4244:         with
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Paper Marbling\Paper Marbling\Paper Marbling.cpp(72,48): warning C4244:         [
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Paper Marbling\Paper Marbling\Paper Marbling.cpp(72,48): warning C4244:             T=int
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Paper Marbling\Paper Marbling\Paper Marbling.cpp(72,48): warning C4244:         ]
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Paper Marbling\Paper Marbling\Paper Marbling.cpp(72,31): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Paper Marbling\Paper Marbling\Paper Marbling.cpp(72,31): warning C4244:         with
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Paper Marbling\Paper Marbling\Paper Marbling.cpp(72,31): warning C4244:         [
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Paper Marbling\Paper Marbling\Paper Marbling.cpp(72,31): warning C4244:             T=int
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Paper Marbling\Paper Marbling\Paper Marbling.cpp(72,31): warning C4244:         ]
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Paper Marbling\Paper Marbling\Paper Marbling.cpp(22,31): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Paper Marbling\Paper Marbling\Paper Marbling.cpp(97,48): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Paper Marbling\Paper Marbling\Paper Marbling.cpp(97,48): warning C4244:         with
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Paper Marbling\Paper Marbling\Paper Marbling.cpp(97,48): warning C4244:         [
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Paper Marbling\Paper Marbling\Paper Marbling.cpp(97,48): warning C4244:             T=int
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Paper Marbling\Paper Marbling\Paper Marbling.cpp(97,48): warning C4244:         ]
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Paper Marbling\Paper Marbling\Paper Marbling.cpp(97,31): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Paper Marbling\Paper Marbling\Paper Marbling.cpp(97,31): warning C4244:         with
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Paper Marbling\Paper Marbling\Paper Marbling.cpp(97,31): warning C4244:         [
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Paper Marbling\Paper Marbling\Paper Marbling.cpp(97,31): warning C4244:             T=int
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Paper Marbling\Paper Marbling\Paper Marbling.cpp(97,31): warning C4244:         ]
   Paper Marbling.vcxproj -> C:\Users\vmano\Documents\Programming\I am bored Helppp\Paper Marbling\x64\Debug\Paper Marbling.exe

@@ -28,18 +28,29 @@ public:
 	}
 
 	void Marble(Drop other) {
+		float CX = other.position.x;
+		float CY = other.position.y;
+
 		for (int i = 0; i < points; i++) {
-			sf::Vector2f point = shape.getPoint(i);
-			float dx = point.x - other.position.x;
-			float dy = point.y - other.position.y;
-			float distance = std::sqrt(dx * dx + dy * dy);
+			float PX = shape.getPoint(i).x;
+			float PY = shape.getPoint(i).y;
 
-			float factor = 1 + (other.R * other.R) / (distance * distance + 1);
+			// Calculate the difference between the point and the center of the other drop
+			float dx = PX - CX;
+			float dy = PY - CY;
 
-			float newX = other.position.x + dx * factor;
-			float newY = other.position.y + dy * factor;
+			// Calculate the distance between the point and the center of the other drop
+			float distanceSquared = dx * dx + dy * dy;
 
-			shape.setPoint(i, sf::Vector2f(newX, newY));
+			// Calculate the factor
+			float factor = std::sqrt(1 + (other.R * other.R) / distanceSquared);
+
+			// Calculate the new positions
+			float NewX = CX + dx * factor;
+			float NewY = CY + dy * factor;
+
+			// Set the new positions to the shape's point
+			shape.setPoint(i, sf::Vector2f(NewX, NewY));
 		}
 	}
 };
