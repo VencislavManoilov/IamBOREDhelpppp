@@ -2,7 +2,7 @@
 #include <vector>
 #include <iostream>
 
-#define N 50
+#define N 150
 #define SIZE (N+2)*(N+2)
 #define IX(i,j) ((i)+(N+2)*(j))
 #define SWAP(x0,x) {float *tmp=x0;x0=x;x=tmp;}
@@ -125,14 +125,50 @@ void draw_dens(sf::RenderWindow& window, float* dens) {
         for (int j = 0; j <= N; j++) {
             float d = dens[IX(i, j)];
             rect.setPosition(i * rect.getSize().x, j * rect.getSize().y);
-            rect.setFillColor(sf::Color(255, 255, 255, static_cast<sf::Uint8>(255 * d)));
+            rect.setFillColor(sf::Color(255, 255, 255, d * 5));
             window.draw(rect);
         }
     }
 }
 
-void get_from_UI(float* dens_prev, float* u_prev, float* v_prev) {
-    // Placeholder: Update dens_prev, u_prev, v_prev based on user input (e.g., mouse events)
+static bool isMousePressed = false;
+
+void get_from_UI(sf::RenderWindow& window, float* dens_prev, float* u_prev, float* v_prev) {
+    static sf::Vector2i lastMousePosition;
+
+    if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
+        if (!isMousePressed) {
+            isMousePressed = true;
+            lastMousePosition = sf::Mouse::getPosition(window);
+        }
+
+        sf::Vector2i currentMousePosition = sf::Mouse::getPosition(window);
+        sf::Vector2f center(window.getSize().x / 2, window.getSize().y / 2);
+        sf::Vector2f direction(currentMousePosition.x - center.x, currentMousePosition.y - center.y);
+        float length = std::sqrt(direction.x * direction.x + direction.y * direction.y);
+        if (length > 0) {
+            direction.x /= length;
+            direction.y /= length;
+        }
+
+        int cx = N / 2;
+        int cy = N / 2;
+        float strength = 10.0f;
+
+        for (int i = 1; i <= N; i++) {
+            for (int j = 1; j <= N; j++) {
+                float distance = std::sqrt((i - cx) * (i - cx) + (j - cy) * (j - cy));
+                if (distance < 5) {
+                    dens_prev[IX(i, j)] = strength;
+                    u_prev[IX(i, j)] = direction.x * strength;
+                    v_prev[IX(i, j)] = direction.y * strength;
+                }
+            }
+        }
+    }
+    else {
+        isMousePressed = false;
+    }
 }
 
 int main() {
@@ -152,8 +188,7 @@ int main() {
                 window.close();
         }
 
-        // Placeholder for user input handling
-        get_from_UI(dens_prev, u_prev, v_prev);
+        get_from_UI(window, dens_prev, u_prev, v_prev);
 
         vel_step(u, v, u_prev, v_prev, visc, dt);
         dens_step(dens, dens_prev, u, v, diff, dt);

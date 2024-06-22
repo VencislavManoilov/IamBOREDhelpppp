@@ -1,2 +1,40 @@
 ﻿  Fluid Simulation.cpp
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(123,91): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(123,91): warning C4244:         with
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(123,91): warning C4244:         [
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(123,91): warning C4244:             T=unsigned int
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(123,91): warning C4244:         ]
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(123,91): warning C4244:         and
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(123,91): warning C4244:         [
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(123,91): warning C4244:             T=float
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(123,91): warning C4244:         ]
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(123,61): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(123,61): warning C4244:         with
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(123,61): warning C4244:         [
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(123,61): warning C4244:             T=unsigned int
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(123,61): warning C4244:         ]
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(123,61): warning C4244:         and
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(123,61): warning C4244:         [
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(123,61): warning C4244:             T=float
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(123,61): warning C4244:         ]
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(128,58): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(146,72): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(146,72): warning C4244:         with
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(146,72): warning C4244:         [
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(146,72): warning C4244:             T=unsigned int
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(146,72): warning C4244:         ]
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(146,72): warning C4244:         and
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(146,72): warning C4244:         [
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(146,72): warning C4244:             T=float
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(146,72): warning C4244:         ]
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(146,48): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(146,48): warning C4244:         with
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(146,48): warning C4244:         [
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(146,48): warning C4244:             T=unsigned int
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(146,48): warning C4244:         ]
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(146,48): warning C4244:         and
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(146,48): warning C4244:         [
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(146,48): warning C4244:             T=float
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(146,48): warning C4244:         ]
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(160,32): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
   Fluid Simulation.vcxproj -> C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\x64\Debug\Fluid Simulation.exe
