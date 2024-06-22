@@ -134,12 +134,9 @@ void draw_dens(sf::RenderWindow& window, float* dens) {
 static bool isMousePressed = false;
 
 void get_from_UI(sf::RenderWindow& window, float* dens_prev, float* u_prev, float* v_prev) {
-    static sf::Vector2i lastMousePosition;
-
     if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
         if (!isMousePressed) {
             isMousePressed = true;
-            lastMousePosition = sf::Mouse::getPosition(window);
         }
 
         sf::Vector2i currentMousePosition = sf::Mouse::getPosition(window);
@@ -153,7 +150,7 @@ void get_from_UI(sf::RenderWindow& window, float* dens_prev, float* u_prev, floa
 
         int cx = N / 2;
         int cy = N / 2;
-        float strength = 10.0f;
+        float strength = 1.0f;
 
         for (int i = 1; i <= N; i++) {
             for (int j = 1; j <= N; j++) {
