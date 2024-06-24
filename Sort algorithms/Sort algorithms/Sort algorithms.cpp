@@ -5,12 +5,6 @@
 #include <windows.h>
 #include <vector>
 
-std::vector<std::vector<float>> AddData(std::vector<std::vector<float>> historyData, std::vector<float> newData) {
-    historyData.push_back(newData);
-
-    return historyData;
-}
-
 std::vector<std::vector<float>> historyData;
 
 void merge(std::vector<float>& array, int const left, int const mid, int const right) {
@@ -60,7 +54,7 @@ void mergeSort(std::vector<float>& array, int const begin, int const end) {
     mergeSort(array, begin, mid);
     mergeSort(array, mid + 1, end);
     merge(array, begin, mid, end);
-    historyData = AddData(historyData, array);
+    historyData.push_back(array);
 }
 
 float partition(std::vector<float>& arr, int low, int high) {
@@ -75,7 +69,7 @@ float partition(std::vector<float>& arr, int low, int high) {
     }
 
     std::swap(arr[i + 1], arr[high]);
-    historyData = AddData(historyData, arr);
+    historyData.push_back(arr);
     return (i + 1);
 }
 
@@ -116,7 +110,7 @@ void CocktailSort(std::vector<float>& a, int n)
                 swapped = true;
             }
         }
-	    historyData = AddData(historyData, a);
+        historyData.push_back(a);
 
         ++start;
     }
@@ -130,7 +124,7 @@ int main() {
 
     const int DataSize = 1000;
 
-    std::vector<float> suffledData;
+    std::vector<float> shuffledData;
 
     int time = 0;
 
@@ -144,12 +138,12 @@ int main() {
 
     for (int i = 0; i < DataSize; i++) {
         float num = i * (100.0f / DataSize);
-        suffledData.push_back(num);
+        shuffledData.push_back(num);
     }
 
     for (int i = DataSize - 1; i > 0; i--) {
         int j = std::rand() % (i + 1);
-        std::swap(suffledData[i], suffledData[j]);
+        std::swap(shuffledData[i], shuffledData[j]);
     }
 
     sf::RectangleShape shapes[DataSize];
@@ -183,13 +177,13 @@ int main() {
                 for (int i = 0; i < DataSize - 1; i++) {
                     swapped = false;
                     for (int j = 0; j < DataSize - i - 1; j++) {
-                        if (suffledData[j] > suffledData[j + 1]) {
-                            std::swap(suffledData[j], suffledData[j + 1]);
+                        if (shuffledData[j] > shuffledData[j + 1]) {
+                            std::swap(shuffledData[j], shuffledData[j + 1]);
                             swapped = true;
                         }
                     }
 
-                    historyData = AddData(historyData, suffledData);
+                    historyData.push_back(shuffledData);
 
                     if (swapped == false)
                         break;
@@ -203,30 +197,30 @@ int main() {
                 for (int i = 0; i < DataSize - 1; i++) {
                     min_idx = i;
                     for (int j = i + 1; j < DataSize; j++) {
-                        if (suffledData[j] < suffledData[min_idx])
+                        if (shuffledData[j] < shuffledData[min_idx])
                             min_idx = j;
                     }
 
                     if (min_idx != i) {
-                        std::swap(suffledData[min_idx], suffledData[i]);
-                        historyData = AddData(historyData, suffledData);
+                        std::swap(shuffledData[min_idx], shuffledData[i]);
+						historyData.push_back(shuffledData);
                     }
                 }
                 DoneSorting = true;
             break;
             case 2:
                 // Merge sort
-                mergeSort(suffledData, 0, suffledData.size() - 1);
+                mergeSort(shuffledData, 0, shuffledData.size() - 1);
                 DoneSorting = true;
             break;
             case 3:
                 // Quick sort
-                quickSort(suffledData, 0, suffledData.size() - 1);
+                quickSort(shuffledData, 0, shuffledData.size() - 1);
                 DoneSorting = true;
             break;
             case 4:
                 // Cocktail sort
-                CocktailSort(suffledData, suffledData.size());
+                CocktailSort(shuffledData, shuffledData.size());
                 DoneSorting = true;
             break;
             default:
@@ -238,7 +232,7 @@ int main() {
         for (int i = 0; i < DataSize; i++) {
             float value = 0;
             if (!Start && !DoneSorting) {
-                value = suffledData[i] / 100.0f;
+                value = shuffledData[i] / 100.0f;
             } else {
                 value = historyData[frame][i] / 100.0f;
             }
