@@ -1,2 +1,3 @@
 ﻿  Sort algorithms.cpp
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Sort algorithms\Sort algorithms\Sort algorithms.cpp(124,44): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
   Sort algorithms.vcxproj -> C:\Users\vmano\Documents\Programming\I am bored Helppp\Sort algorithms\x64\Debug\Sort algorithms.exe

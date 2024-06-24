@@ -3,6 +3,13 @@
 #include <cstdlib>
 #include <ctime>
 #include <windows.h>
+#include <vector>
+
+std::vector<std::vector<float>> AddData(std::vector<std::vector<float>> historyData, std::vector<float> newData) {
+    historyData.push_back(newData);
+
+    return historyData;
+}
 
 int main() {
     sf::RenderWindow window(sf::VideoMode(800, 600), "Sort Algorithm");
@@ -10,7 +17,9 @@ int main() {
 
     const int DataSize = 1000;
 
-    float data[DataSize]{};
+    std::vector<float> suffledData;
+
+    std::vector<std::vector<float>> historyData;
 
     int time = 0;
 
@@ -18,14 +27,18 @@ int main() {
 
     bool Start = false;
 
+    int frame = 0;
+
+    bool DoneSorting = false;
+
     for (int i = 0; i < DataSize; i++) {
         float num = i * (100.0f / DataSize);
-        data[i] = num;
+        suffledData.push_back(num);
     }
 
     for (int i = DataSize - 1; i > 0; i--) {
         int j = std::rand() % (i + 1);
-        std::swap(data[i], data[j]);
+        std::swap(suffledData[i], suffledData[j]);
     }
 
     sf::RectangleShape shapes[DataSize];
@@ -39,8 +52,6 @@ int main() {
     sf::Text selectedSortText("Bubble Sort", font, 25);
     selectedSortText.setPosition(0, 30);
 
-    int selectionSortI = 0;
-
     while (window.isOpen()) {
         while (window.pollEvent(e)) {
             if (e.type == sf::Event::Closed) {
@@ -53,42 +64,45 @@ int main() {
         window.draw(controllsText);
         window.draw(selectedSortText);
 
+        if (Start && !DoneSorting) {
+            switch (option) {
+            case 0:
+                bool swapped;
+                for (int i = 0; i < DataSize - 1; i++) {
+                    swapped = false;
+                    for (int j = 0; j < DataSize - i - 1; j++) {
+                        if (suffledData[j] > suffledData[j + 1]) {
+                            std::swap(suffledData[j], suffledData[j + 1]);
+                            swapped = true;
+                        }
+                    }
+
+                    historyData = AddData(historyData, suffledData);
+
+                    if (swapped == false)
+                        break;
+                }
+
+				DoneSorting = true;
+            break;
+            default:
+            break;
+            }
+        }
+
         float barWidth = 700.0f / DataSize;
         for (int i = 0; i < DataSize; i++) {
-            float value = static_cast<float>(data[i]) / 100.0f;
+            float value = 0;
+            if (!Start && !DoneSorting) {
+                value = suffledData[i] / 100.0f;
+            } else {
+                value = historyData[frame][i] / 100.0f;
+            }
             shapes[i].setPosition(50.0f + i * barWidth, 590.0f - value * 500.0f);
             shapes[i].setSize(sf::Vector2f(barWidth, value * 500.0f));
             shapes[i].setFillColor(sf::Color::Green);
 
             window.draw(shapes[i]);
-        }
-
-        if (Start) {
-            switch (option) {
-            case 0: // Bubble Sort
-                for (int j = 0; j < DataSize - 1; j++) {
-                    if (data[j] > data[j + 1]) {
-                        std::swap(data[j], data[j + 1]);
-                    }
-                }
-                break;
-            case 1: // Selection Sort
-                if (selectionSortI < DataSize - 1) {
-                    int min_idx = selectionSortI;
-                    for (int j = selectionSortI + 1; j < DataSize; j++) {
-                        if (data[j] < data[min_idx]) {
-                            min_idx = j;
-                        }
-                    }
-                    if (min_idx != selectionSortI) {
-                        std::swap(data[min_idx], data[selectionSortI]);
-                    }
-                    selectionSortI++;
-                }
-                break;
-            default:
-            break;
-            }
         }
 
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num1)) {
@@ -103,11 +117,16 @@ int main() {
             Start = true;
         }
 
+        if (Start && DoneSorting) {
+            frame++;
+
+            if (frame >= historyData.size())
+                frame = historyData.size() - 1;
+
+            Sleep(10);
+        }
+
         window.display();
         time++;
-
-        if (Start) {
-            Sleep(1);
-        }
     }
 }
