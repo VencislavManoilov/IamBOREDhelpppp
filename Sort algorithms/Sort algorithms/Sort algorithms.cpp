@@ -63,6 +63,30 @@ void mergeSort(std::vector<float>& array, int const begin, int const end) {
     historyData = AddData(historyData, array);
 }
 
+float partition(std::vector<float>& arr, int low, int high) {
+    int pivot = arr[high];
+    int i = (low - 1);
+
+    for (int j = low; j <= high - 1; j++) {
+        if (arr[j] < pivot) {
+            i++;
+            std::swap(arr[i], arr[j]);
+        }
+    }
+
+    std::swap(arr[i + 1], arr[high]);
+    historyData = AddData(historyData, arr);
+    return (i + 1);
+}
+
+void quickSort(std::vector<float>& arr, int low, int high){
+    if (low < high) {
+        float pi = partition(arr, low, high);
+        quickSort(arr, low, pi - 1);
+        quickSort(arr, pi + 1, high);
+    }
+}
+
 int main() {
     std::srand(std::time(0));
 
@@ -162,6 +186,9 @@ int main() {
             break;
             case 3:
                 // Quick sort
+                quickSort(suffledData, 0, suffledData.size() - 1);
+                historyData = AddData(historyData, suffledData);
+                DoneSorting = true;
             break;
             case 4:
                 // Cocktail sort
