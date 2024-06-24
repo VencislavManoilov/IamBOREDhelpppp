@@ -87,6 +87,41 @@ void quickSort(std::vector<float>& arr, int low, int high){
     }
 }
 
+void CocktailSort(std::vector<float>& a, int n)
+{
+    bool swapped = true;
+    int start = 0;
+    int end = n - 1;
+
+    while (swapped) {
+        swapped = false;
+
+        for (int i = start; i < end; ++i) {
+            if (a[i] > a[i + 1]) {
+                std::swap(a[i], a[i + 1]);
+                swapped = true;
+            }
+        }
+
+        if (!swapped)
+            break;
+
+        swapped = false;
+
+        --end;
+
+        for (int i = end - 1; i >= start; --i) {
+            if (a[i] > a[i + 1]) {
+                std::swap(a[i], a[i + 1]);
+                swapped = true;
+            }
+        }
+	    historyData = AddData(historyData, a);
+
+        ++start;
+    }
+}
+
 int main() {
     std::srand(std::time(0));
 
@@ -191,6 +226,9 @@ int main() {
             break;
             case 4:
                 // Cocktail sort
+                CocktailSort(suffledData, suffledData.size());
+                DoneSorting = true;
+            break;
             default:
             break;
             }
