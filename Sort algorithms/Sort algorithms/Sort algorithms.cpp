@@ -12,6 +12,8 @@ std::vector<std::vector<float>> AddData(std::vector<std::vector<float>> historyD
 }
 
 int main() {
+    std::srand(std::time(0));
+
     sf::RenderWindow window(sf::VideoMode(800, 600), "Sort Algorithm");
     sf::Event e;
 
@@ -48,9 +50,9 @@ int main() {
         return -1;
     }
 
-    sf::Text controllsText("Start - Space; Bubble Sort - 1; Selection Sort - 2", font, 25);
+    sf::Text controllsText("Start - Space; Bubble Sort - 1; Selection Sort - 2; Merge Sort - 3; Quick Sort - 4; Cocktail Sort - 5", font, 18);
     sf::Text selectedSortText("Bubble Sort", font, 25);
-    selectedSortText.setPosition(0, 30);
+    selectedSortText.setPosition(0, 25);
 
     while (window.isOpen()) {
         while (window.pollEvent(e)) {
@@ -67,6 +69,7 @@ int main() {
         if (Start && !DoneSorting) {
             switch (option) {
             case 0:
+                // Bubble sort
                 bool swapped;
                 for (int i = 0; i < DataSize - 1; i++) {
                     swapped = false;
@@ -85,6 +88,17 @@ int main() {
 
 				DoneSorting = true;
             break;
+            case 1:
+                // Selection sort
+            break;
+            case 2:
+                // Merge sort
+            break;
+            case 3:
+                // Quick sort
+            break;
+            case 4:
+                // Cocktail sort
             default:
             break;
             }
@@ -113,6 +127,18 @@ int main() {
             option = 1;
             selectedSortText.setString("Selection Sort");
         }
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num3)) {
+            option = 2;
+            selectedSortText.setString("Merge Sort");
+        }
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num4)) {
+            option = 3;
+            selectedSortText.setString("Quick Sort");
+        }
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num5)) {
+            option = 4;
+            selectedSortText.setString("Cocktail Sort");
+        }
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
             Start = true;
         }
@@ -123,7 +149,7 @@ int main() {
             if (frame >= historyData.size())
                 frame = historyData.size() - 1;
 
-            Sleep(10);
+            Sleep(1);
         }
 
         window.display();
