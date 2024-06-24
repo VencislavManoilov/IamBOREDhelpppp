@@ -1,9 +1,10 @@
 ﻿  Sort algorithms.cpp
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Sort algorithms\Sort algorithms\Sort algorithms.cpp(15,25): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\vmano\Documents\Programming\I am bored Helppp\Sort algorithms\Sort algorithms\Sort algorithms.cpp(150,44): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Sort algorithms\Sort algorithms\Sort algorithms.cpp(67,25): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Sort algorithms\Sort algorithms\Sort algorithms.cpp(160,62): warning C4267: 'argument': conversion from 'size_t' to 'const int', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Sort algorithms\Sort algorithms\Sort algorithms.cpp(216,44): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
   Generating code
-  2 of 208 functions ( 1.0%) were compiled, the rest were copied from previous compilation.
-    1 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+  5 of 213 functions ( 2.3%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    4 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   Sort algorithms.vcxproj -> C:\Users\vmano\Documents\Programming\I am bored Helppp\Sort algorithms\x64\Release\Sort algorithms.exe

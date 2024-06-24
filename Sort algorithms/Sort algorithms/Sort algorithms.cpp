@@ -11,6 +11,58 @@ std::vector<std::vector<float>> AddData(std::vector<std::vector<float>> historyD
     return historyData;
 }
 
+std::vector<std::vector<float>> historyData;
+
+void merge(std::vector<float>& array, int const left, int const mid, int const right) {
+    int const subArrayOne = mid - left + 1;
+    int const subArrayTwo = right - mid;
+
+    std::vector<float> leftArray;
+    std::vector<float> rightArray;
+
+    for (auto i = 0; i < subArrayOne; i++)
+        leftArray.push_back(array[left + i]);
+    for (auto j = 0; j < subArrayTwo; j++)
+        rightArray.push_back(array[mid + 1 + j]);
+
+    auto indexOfSubArrayOne = 0, indexOfSubArrayTwo = 0;
+    int indexOfMergedArray = left;
+
+    while (indexOfSubArrayOne < subArrayOne && indexOfSubArrayTwo < subArrayTwo) {
+        if (leftArray[indexOfSubArrayOne] <= rightArray[indexOfSubArrayTwo]) {
+            array[indexOfMergedArray] = leftArray[indexOfSubArrayOne];
+            indexOfSubArrayOne++;
+        } else {
+            array[indexOfMergedArray] = rightArray[indexOfSubArrayTwo];
+            indexOfSubArrayTwo++;
+        }
+        indexOfMergedArray++;
+    }
+
+    while (indexOfSubArrayOne < subArrayOne) {
+        array[indexOfMergedArray] = leftArray[indexOfSubArrayOne];
+        indexOfSubArrayOne++;
+        indexOfMergedArray++;
+    }
+
+    while (indexOfSubArrayTwo < subArrayTwo) {
+        array[indexOfMergedArray] = rightArray[indexOfSubArrayTwo];
+        indexOfSubArrayTwo++;
+        indexOfMergedArray++;
+    }
+}
+
+void mergeSort(std::vector<float>& array, int const begin, int const end) {
+    if (begin >= end)
+        return;
+
+    int mid = begin + (end - begin) / 2;
+    mergeSort(array, begin, mid);
+    mergeSort(array, mid + 1, end);
+    merge(array, begin, mid, end);
+    historyData = AddData(historyData, array);
+}
+
 int main() {
     std::srand(std::time(0));
 
@@ -20,8 +72,6 @@ int main() {
     const int DataSize = 1000;
 
     std::vector<float> suffledData;
-
-    std::vector<std::vector<float>> historyData;
 
     int time = 0;
 
@@ -90,9 +140,25 @@ int main() {
             break;
             case 1:
                 // Selection sort
+                int min_idx;
+                for (int i = 0; i < DataSize - 1; i++) {
+                    min_idx = i;
+                    for (int j = i + 1; j < DataSize; j++) {
+                        if (suffledData[j] < suffledData[min_idx])
+                            min_idx = j;
+                    }
+
+                    if (min_idx != i) {
+                        std::swap(suffledData[min_idx], suffledData[i]);
+                        historyData = AddData(historyData, suffledData);
+                    }
+                }
+                DoneSorting = true;
             break;
             case 2:
                 // Merge sort
+                mergeSort(suffledData, 0, suffledData.size() - 1);
+                DoneSorting = true;
             break;
             case 3:
                 // Quick sort
