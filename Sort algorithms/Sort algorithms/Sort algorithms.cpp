@@ -64,7 +64,7 @@ void mergeSort(std::vector<float>& array, int const begin, int const end) {
 }
 
 float partition(std::vector<float>& arr, int low, int high) {
-    int pivot = arr[high];
+    float pivot = arr[high];
     int i = (low - 1);
 
     for (int j = low; j <= high - 1; j++) {
@@ -187,7 +187,6 @@ int main() {
             case 3:
                 // Quick sort
                 quickSort(suffledData, 0, suffledData.size() - 1);
-                historyData = AddData(historyData, suffledData);
                 DoneSorting = true;
             break;
             case 4:
