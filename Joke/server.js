@@ -11,10 +11,8 @@ app.get("/", (req, res) => {
 })
 
 app.get("/joke", (req, res) => {
-    var limit = 1;
-
     request.get({
-        url: 'https://api.api-ninjas.com/v1/jokes?limit=' + limit,
+        url: 'https://api.api-ninjas.com/v1/jokes?',
         headers: {
             'X-Api-Key': '6hKeSsrrBfpedtbKDNbCeA==tukMyIgLPyDW0ABN'
         },

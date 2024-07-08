@@ -1,0 +1,4 @@
+﻿  Sand Simulation.cpp
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Sand Simulation\Sand Simulation\Sand Simulation.cpp(52,47): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Sand Simulation\Sand Simulation\Sand Simulation.cpp(52,31): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Sand Simulation.vcxproj -> C:\Users\vmano\Documents\Programming\I am bored Helppp\Sand Simulation\x64\Debug\Sand Simulation.exe

@@ -1,0 +1,15 @@
+﻿  Sort algorithms.cpp
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Sort algorithms\Sort algorithms\Sort algorithms.cpp(73,15): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Sort algorithms\Sort algorithms\Sort algorithms.cpp(79,32): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Sort algorithms\Sort algorithms\Sort algorithms.cpp(80,27): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Sort algorithms\Sort algorithms\Sort algorithms.cpp(120,25): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Sort algorithms\Sort algorithms\Sort algorithms.cpp(213,64): warning C4267: 'argument': conversion from 'size_t' to 'const int', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Sort algorithms\Sort algorithms\Sort algorithms.cpp(218,64): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Sort algorithms\Sort algorithms\Sort algorithms.cpp(223,61): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Sort algorithms\Sort algorithms\Sort algorithms.cpp(274,44): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  Generating code
+  3 of 190 functions ( 1.6%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    12 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  Sort algorithms.vcxproj -> C:\Users\vmano\Documents\Programming\I am bored Helppp\Sort algorithms\x64\Release\Sort algorithms.exe

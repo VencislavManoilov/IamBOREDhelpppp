@@ -1,0 +1,45 @@
+﻿  Fluid Simulation.cpp
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(123,91): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(123,91): warning C4244:         with
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(123,91): warning C4244:         [
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(123,91): warning C4244:             T=unsigned int
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(123,91): warning C4244:         ]
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(123,91): warning C4244:         and
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(123,91): warning C4244:         [
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(123,91): warning C4244:             T=float
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(123,91): warning C4244:         ]
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(123,61): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(123,61): warning C4244:         with
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(123,61): warning C4244:         [
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(123,61): warning C4244:             T=unsigned int
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(123,61): warning C4244:         ]
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(123,61): warning C4244:         and
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(123,61): warning C4244:         [
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(123,61): warning C4244:             T=float
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(123,61): warning C4244:         ]
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(128,58): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(143,72): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(143,72): warning C4244:         with
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(143,72): warning C4244:         [
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(143,72): warning C4244:             T=unsigned int
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(143,72): warning C4244:         ]
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(143,72): warning C4244:         and
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(143,72): warning C4244:         [
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(143,72): warning C4244:             T=float
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(143,72): warning C4244:         ]
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(143,48): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(143,48): warning C4244:         with
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(143,48): warning C4244:         [
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(143,48): warning C4244:             T=unsigned int
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(143,48): warning C4244:         ]
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(143,48): warning C4244:         and
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(143,48): warning C4244:         [
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(143,48): warning C4244:             T=float
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(143,48): warning C4244:         ]
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\Fluid Simulation\Fluid Simulation.cpp(157,32): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  Generating code
+  7 of 16 functions (43.8%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  Fluid Simulation.vcxproj -> C:\Users\vmano\Documents\Programming\I am bored Helppp\Fluid Simulation\x64\Release\Fluid Simulation.exe

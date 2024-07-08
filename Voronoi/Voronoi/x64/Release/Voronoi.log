@@ -1,0 +1,14 @@
+﻿  Voronoi.cpp
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Voronoi\Voronoi\Voronoi.cpp(19,22): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Voronoi\Voronoi\Voronoi.cpp(77,12): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Voronoi\Voronoi\Voronoi.cpp(169,89): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Voronoi\Voronoi\Voronoi.cpp(169,63): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Voronoi\Voronoi\Voronoi.cpp(169,39): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Voronoi\Voronoi\Voronoi.cpp(169,36): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\vmano\Documents\Programming\I am bored Helppp\Voronoi\Voronoi\Voronoi.cpp(242,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Generating code
+  14 of 139 functions (10.1%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  Voronoi.vcxproj -> C:\Users\vmano\Documents\Programming\I am bored Helppp\Voronoi\x64\Release\Voronoi.exe
