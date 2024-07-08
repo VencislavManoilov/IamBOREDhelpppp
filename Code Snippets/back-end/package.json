@@ -1,0 +1,26 @@
+{
+  "name": "code-snippets",
+  "version": "1.0.0",
+  "description": "In this website you can paste you code snippet and share it with anyone!",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Vencislav Manoilov",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "express": "^4.19.2",
+    "express-mysql-session": "^2.1.8",
+    "express-session": "^1.18.0",
+    "express-validator": "^7.1.0",
+    "fs": "^0.0.1-security",
+    "mysql2": "^3.10.1",
+    "nodemon": "^3.1.4",
+    "path": "^0.12.7"
+  }
+}
