@@ -65,7 +65,11 @@ const Create = () => {
     const updateTextarea = () => {
         const textarea = textareaRef.current;
         textarea.style.overflow = 'hidden';
-        textarea.style.height = textarea.scrollHeight + "px";
+        if(parseFloat(textarea.style.height) < 300) {
+            textarea.style.height = "300px";
+        } else {
+            textarea.style.height = textarea.scrollHeight + "px";
+        }
     };
 
     useEffect(() => {
@@ -103,53 +107,56 @@ const Create = () => {
     return (
         <>
         {view === "page" ? (
-            <div className="container mt-5">
-                <div id="error" style={{display: 'none', position: 'sticky'}} className="alert alert-danger alert-dismissible fade show">
-                    The fields are not filled!
-                    <button type="button" className="btn-close" onClick={() => {document.getElementById("error").style.display = "none"}}></button>
-                </div>
-                <div className="col-lg-6">
-                    <label htmlFor="title" style={{fontSize: 30, fontWeight: "bold"}}>Title</label>
-                    <input
-                        id="title"
-                        className="form-control form-control-lg"
-                        type="text"
-                        value={title}
-                        onChange={(e) => setTitle(e.target.value)}
-                    />
-                </div>
-    
-                <div className="col-12 mt-4">
-                    <label htmlFor="textarea" className="form-label" style={{fontSize: 25, fontWeight: "bold"}}>Code</label>
-                    <textarea
-                        id="textarea"
-                        className="form-control"
-                        ref={textareaRef}
-                        value={code}
-                        onChange={(e) => setCode(e.target.value)}
-                        onInput={updateTextarea}
-                        style={{ overflow: 'hidden', resize: 'none' }}
-                    />
-                </div>
-    
-                <div className="col-8 col-lg-3 mt-3 row text-center">
-                    <label htmlFor="select" className="form-label col-auto" style={{fontSize: 22, fontWeight: "bold"}}>Type</label>
-                    <select
-                        id="select"
-                        className="form-control selectpicker col"
-                        value={type}
-                        onChange={(e) => setType(e.target.value)}
-                    >
-                        {[...validTypes].map((lang) => (
-                            <option key={lang} value={lang}>
-                                {lang.toUpperCase()}
-                            </option>
-                        ))}
-                    </select>
-                </div>
-    
-                <div className="col-12 text-end" style={{marginBottom: '50px'}}>
-                    <button className="btn btn-success" onClick={Send}>Send</button>
+            <div className='container mt-5' style={{backgroundColor: "rgba(0, 0, 0, 0.15)", border: "2px solid rgba(0, 0, 0, 0.3)", borderRadius: "20px"}}>
+                <div className="container mt-5">
+                    <div id="error" style={{display: 'none', position: 'sticky'}} className="alert alert-danger alert-dismissible fade show">
+                        The fields are not filled!
+                        <button type="button" className="btn-close" onClick={() => {document.getElementById("error").style.display = "none"}}></button>
+                    </div>
+                    <div className="col-lg-6">
+                        <label htmlFor="title" style={{fontSize: 30, fontWeight: "bold"}}>Title</label>
+                        <input
+                            id="title"
+                            className="form-control form-control-lg"
+                            type="text"
+                            value={title}
+                            onChange={(e) => setTitle(e.target.value)}
+                        />
+                    </div>
+        
+                    <div className="col-12 mt-4">
+                        <label htmlFor="textarea" className="form-label" style={{fontSize: 25, fontWeight: "bold"}}>Code</label>
+                        <textarea
+                            id="textarea"
+                            className="form-control"
+                            rows={10}
+                            ref={textareaRef}
+                            value={code}
+                            onChange={(e) => setCode(e.target.value)}
+                            onInput={updateTextarea}
+                            style={{ overflow: 'hidden', resize: 'none' }}
+                        />
+                    </div>
+        
+                    <div className="col-8 col-lg-3 mt-3 row text-center">
+                        <label htmlFor="select" className="form-label col-auto" style={{fontSize: 22, fontWeight: "bold"}}>Type</label>
+                        <select
+                            id="select"
+                            className="form-control selectpicker col"
+                            value={type}
+                            onChange={(e) => setType(e.target.value)}
+                        >
+                            {[...validTypes].map((lang) => (
+                                <option key={lang} value={lang}>
+                                    {lang.toUpperCase()}
+                                </option>
+                            ))}
+                        </select>
+                    </div>
+        
+                    <div className="col-12 text-end" style={{marginBottom: '50px'}}>
+                        <button className="btn btn-success" onClick={Send}>Send</button>
+                    </div>
                 </div>
             </div>
         ) : (

@@ -7,7 +7,7 @@ const User = ({isLoggedIn}) => {
             {isLoggedIn ? (
                 <div className="navbar">
                     <button className="btn btn-success" onClick={() => {window.location.href = "/create"}} style={{marginRight: "30px"}}>Create</button>
-                    <a className="d-flex link" href="/profile" style={{marginRight: "20px"}}>{isLoggedIn.name}</a>
+                    <a type="button" className="d-flex profile btn" href="/profile" style={{marginRight: "20px"}}>{isLoggedIn.name}</a>
                 </div>
             ) : (
                 <div>

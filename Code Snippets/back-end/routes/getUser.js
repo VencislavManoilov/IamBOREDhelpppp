@@ -15,7 +15,11 @@ route.get(
                     return res.status(500).json({ error: "Internal server error" });
                 }
 
-                res.status(200).json({ user: results[0] });
+                let userWithoutPassword = results[0];
+
+                delete userWithoutPassword.password;
+
+                res.status(200).json({ user: userWithoutPassword });
             });
         } catch(err) {
             console.error("Error:", err);
