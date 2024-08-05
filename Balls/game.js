@@ -35,13 +35,13 @@ for(let i = 0; i < 10; i++) {
         };
 
         // Check for overlap with existing balls
-        for (let j = 0; j < balls.length; j++) {
-            if (distance(newBall.x, newBall.y, balls[j].x, balls[j].y) < newBall.R + balls[j].R) {
+        for(let j = 0; j < balls.length; j++) {
+            if(distance(newBall.x, newBall.y, balls[j].x, balls[j].y) < newBall.R + balls[j].R) {
                 overlapping = true;
                 break;
             }
         }
-    } while (overlapping);
+    } while(overlapping);
     balls.push(new Ball(newBall.x, newBall.y, newBall.R));
 }
 
@@ -54,7 +54,7 @@ function update() {
 
         // Checks for border collision
         let distFromCenter = distance(0, 0, balls[i].x, balls[i].y);
-        if (distFromCenter > R - balls[i].R) {
+        if(distFromCenter > R - balls[i].R) {
             // Calculate the normal vector at the collision point
             let normalX = balls[i].x / distFromCenter;
             let normalY = balls[i].y / distFromCenter;
@@ -72,9 +72,9 @@ function update() {
         }
 
         // Checks for ball collision
-        for (let j = i + 1; j < balls.length; j++) {
+        for(let j = i + 1; j < balls.length; j++) {
             let dist = distance(balls[i].x, balls[i].y, balls[j].x, balls[j].y);
-            if (dist < balls[i].R + balls[j].R) {
+            if(dist < balls[i].R + balls[j].R) {
                 // Calculate the normal and tangent vectors
                 let normalX = (balls[j].x - balls[i].x) / dist;
                 let normalY = (balls[j].y - balls[i].y) / dist;
@@ -114,7 +114,6 @@ function update() {
         balls[i].Update();
     }
 }
-
 
 function draw() {
     for(let i = 0; i < balls.length; i++) {
