@@ -29,7 +29,7 @@ function update() {
         // Adds gravity
         balls[i].velocityY += 0.05;
 
-        // Checks for border colition
+        // Checks for border collision
         if(distance(0, 0, balls[i].x, balls[i].y) > R - balls[i].R) {
             let normal = Math.atan2(-balls[i].y, -balls[i].x);
             let angleGoing = Math.atan2(-balls[i].velocityY, -balls[i].velocityX);
@@ -40,6 +40,13 @@ function update() {
             // Bounces the balls
             balls[i].velocityX = Math.cos(angle) * speed;
             balls[i].velocityY = Math.sin(angle) * speed;
+        }
+
+        // Checks for balls collision
+        for(let j = 0; j < balls.length; j++) {
+            if(i != j) {
+
+            }
         }
 
         // Updates the velocity
