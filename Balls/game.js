@@ -1,4 +1,4 @@
-let balls = [], R = 250, r = 10;
+let balls = [], R = 250, r = 20;
 
 class Ball {
     constructor(x, y, R) {
@@ -7,7 +7,8 @@ class Ball {
         this.velocityX = 0;
         this.velocityY = 0;
         this.R = R;
-        this.color = `hsl(${randomInteger(360)}, 100%, 50%)`
+        this.mass = (R / 20) ** 2;
+        this.color = `hsl(${randomInteger(0, 360)}, 100%, 50%)`
     }
 
     Update() {
@@ -20,19 +21,28 @@ class Ball {
     }
 }
 
-for(let i = 0; i < 20; i++) {
-    let x = 0;
-    let y = 0;
-    while(distance(250, 250, x, y) > R - r) {
-        x = randomInteger(0, 500);
-        y = randomInteger(0, 500);
-        for(let j = 0; j < balls.length; j++) {
-            if(distance(x, y, balls[j].x, balls[j].y) < r*2) {
-                x = 0; y = 0;
+for(let i = 0; i < 10; i++) {
+    let newBall;
+    let overlapping;
+    do {
+        overlapping = false;
+        let x = (Math.random() * 2 - 1) * (R - 20);
+        let y = (Math.random() * 2 - 1) * (R - 20);
+        newBall = {
+            x: x,
+            y: y,
+            R: 20
+        };
+
+        // Check for overlap with existing balls
+        for (let j = 0; j < balls.length; j++) {
+            if (distance(newBall.x, newBall.y, balls[j].x, balls[j].y) < newBall.R + balls[j].R) {
+                overlapping = true;
+                break;
             }
         }
-    }
-    balls.push(new Ball(x - 250, y - 250, r))
+    } while (overlapping);
+    balls.push(new Ball(newBall.x, newBall.y, newBall.R));
 }
 
 changeBg("black")
@@ -43,16 +53,22 @@ function update() {
         balls[i].velocityY += 0.05;
 
         // Checks for border collision
-        if (distance(0, 0, balls[i].x, balls[i].y) > R - balls[i].R) {
-            let normal = Math.atan2(balls[i].y, balls[i].x);
-            let angleGoing = Math.atan2(balls[i].velocityY, balls[i].velocityX);
-            let difference = normal - angleGoing;
-            let angle = normal + difference;
-            let speed = distance(0, 0, balls[i].velocityX, balls[i].velocityY);
+        let distFromCenter = distance(0, 0, balls[i].x, balls[i].y);
+        if (distFromCenter > R - balls[i].R) {
+            // Calculate the normal vector at the collision point
+            let normalX = balls[i].x / distFromCenter;
+            let normalY = balls[i].y / distFromCenter;
 
-            // Bounces the balls
-            balls[i].velocityX = -Math.cos(angle) * speed;
-            balls[i].velocityY = -Math.sin(angle) * speed;
+            // Calculate the dot product of velocity and normal
+            let dotProduct = balls[i].velocityX * normalX + balls[i].velocityY * normalY;
+
+            // Reflect the velocity vector
+            balls[i].velocityX -= 2 * dotProduct * normalX;
+            balls[i].velocityY -= 2 * dotProduct * normalY;
+            
+            // Move the ball back to the boundary to prevent it from getting stuck
+            balls[i].x = normalX * (R - balls[i].R);
+            balls[i].y = normalY * (R - balls[i].R);
         }
 
         // Checks for ball collision
@@ -72,8 +88,8 @@ function update() {
                 let dotProductTangent2 = balls[j].velocityX * tangentX + balls[j].velocityY * tangentY;
 
                 // Calculate the new normal velocities
-                let newDotProductNormal1 = (2 * dotProductNormal2) / 2;
-                let newDotProductNormal2 = (2 * dotProductNormal1) / 2;
+                let newDotProductNormal1 = (dotProductNormal1 * (balls[i].mass - balls[j].mass) + 2 * balls[j].mass * dotProductNormal2) / (balls[i].mass + balls[j].mass);
+                let newDotProductNormal2 = (dotProductNormal2 * (balls[j].mass - balls[i].mass) + 2 * balls[i].mass * dotProductNormal1) / (balls[i].mass + balls[j].mass);
 
                 // Update the velocities
                 balls[i].velocityX = tangentX * dotProductTangent1 + normalX * newDotProductNormal1;
@@ -81,7 +97,12 @@ function update() {
                 balls[j].velocityX = tangentX * dotProductTangent2 + normalX * newDotProductNormal2;
                 balls[j].velocityY = tangentY * dotProductTangent2 + normalY * newDotProductNormal2;
 
-                // console.log(dist, normalX, normalY, tangentX, tangentY, dotProductNormal1, dotProductTangent2, newDotProductNormal1, newDotProductNormal2)
+                // Separate the balls to prevent them from sticking together
+                let overlap = 0.5 * (balls[i].R + balls[j].R - dist + 0.01);  // Slightly increase overlap to avoid precision issues
+                balls[i].x -= overlap * normalX;
+                balls[i].y -= overlap * normalY;
+                balls[j].x += overlap * normalX;
+                balls[j].y += overlap * normalY;
             }
         }
 
@@ -93,6 +114,7 @@ function update() {
         balls[i].Update();
     }
 }
+
 
 function draw() {
     for(let i = 0; i < balls.length; i++) {
