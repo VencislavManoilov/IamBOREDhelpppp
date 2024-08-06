@@ -2,8 +2,8 @@ let balls = [], R = 250, r = 20, holeAngle = randomInteger(0, 360), holeSize = 2
 
 const titles = [
     "How many balls can fit in",
-    "Will it escape before gets too big",
-    "On every bounce it gets smaller"
+    "How many bounces before it gets too big",
+    "How many bounces until it escapes"
 ]
 
 class Ball {
@@ -268,9 +268,11 @@ function Bounce(gamemode) {
         break;
         case 2:
             balls[0].R += 1;
+            balls[0].color = `hsl(${randomInteger(0, 360)}, 100%, 50%)`
         break;
         case 3:
             balls[0].R -= 1;
+            balls[0].color = `hsl(${randomInteger(0, 360)}, 100%, 50%)`
         break;
         default:
         break;
