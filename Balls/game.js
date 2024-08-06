@@ -1,4 +1,10 @@
-let balls = [], R = 250, r = 20, holeAngle = randomInteger(0, 360), holeSize = 20, start = false, gamemode = 1;
+let balls = [], R = 250, r = 20, holeAngle = randomInteger(0, 360), holeSize = 20, start = false, gamemode = 1, bounces = 0;
+
+const titles = [
+    "How many balls can fit in",
+    "Will it escape before gets too big",
+    "On every bounce it gets smaller"
+]
 
 class Ball {
     constructor(x, y, R) {
@@ -8,19 +14,20 @@ class Ball {
         this.velocityY = 0;
         this.inside = true;
         this.R = R;
-        this.mass = (R / 20) ** 2;
         this.color = `hsl(${randomInteger(0, 360)}, 100%, 50%)`
     }
-
+    
     Update() {
         this.x += this.velocityX;
         this.y += this.velocityY;
+        this.mass = (R / 20) ** 2;
     }
     
     Draw() {
         fillArc(windowSizeX/2 + this.x, windowSizeY/2 + this.y, this.R, this.color);
     }
 }
+
 function SpawnBall(size) {
     let newBall;
     let overlapping;
@@ -34,8 +41,9 @@ function SpawnBall(size) {
             y = randomInteger(0, R*2 - size) - 250;
             tries++;
         }
-        // // x -= 250;
-        // // y -= 250;
+        if(tries >= 10 && gamemode == 3) {
+            x = randomInteger(0, 20) - 10; y = randomInteger(0, 20) - 10;
+        }
         newBall = {
             x: x,
             y: y,
@@ -53,21 +61,62 @@ function SpawnBall(size) {
     balls.push(new Ball(newBall.x, newBall.y, newBall.R));
 }
 
-for(let i = 0; i < 10; i++) {
-    SpawnBall(r);
+function Switch(gamemode) {
+    switch(gamemode) {
+        case 1:
+            balls = [];
+            for(let i = 0; i < 10; i++) {
+                SpawnBall(r);
+            }
+        break;
+        case 2:
+            balls = [];
+            SpawnBall(5);
+        break;
+        case 3:
+            balls = [];
+            SpawnBall(R - 50);
+        default:
+        break;
+    }
 }
+
+Switch(gamemode);
 
 changeBg("black")
 
+let pressed = false;
 function update() {
+    if(!pressed && !start) {
+        if(Input.GetKey(KeyCode.ArrowUp)) {
+            gamemode++;
+            Switch(gamemode);
+            pressed = true;
+        } else if(Input.GetKey(KeyCode.ArrowDown)) {
+            gamemode--;
+            Switch(gamemode);
+            pressed = true;
+        } else if(Input.GetKey(KeyCode.ArrowRight)) {
+            Switch(gamemode);
+            pressed = true;
+        }
+    }
+
     if(gamemode < 1) {
+        gamemode = 3;
+        Switch(gamemode);
+    } else if(gamemode > 3) {
         gamemode = 1;
-    } else if(gamemode > 1) {
-        gamemode = 1;
+        Switch(gamemode);
     }
 
     if(Input.GetKey(KeyCode.Space)) {
+        if(start && !pressed && Input.GetKey(KeyCode.Space)) {
+            document.location.reload();
+        }
+
         start = true;
+        pressed = true;
     }
 
     if(!start) {
@@ -101,8 +150,9 @@ function update() {
             // Check if the ball is in the hole range
             let holeStart = holeAngleRad - holeSizeRad;
             let holeEnd = holeAngleRad;
+            console.log(Math.cos(holeSizeRad) * R, Math.sin(holeSizeRad) * R);
 
-            if (start && (holeStart <= ballAngle && ballAngle <= holeEnd) ||
+            if (start && balls[i].R * 2 < distance(250, 0, Math.cos(holeSizeRad) * R, Math.sin(holeSizeRad) * R) && (holeStart <= ballAngle && ballAngle <= holeEnd) ||
                 (holeStart < 0 && (ballAngle <= holeEnd || ballAngle >= holeStart + 2 * Math.PI)) ||
                 (holeEnd > 2 * Math.PI && (ballAngle >= holeStart || ballAngle <= holeEnd - 2 * Math.PI))) {
                 balls[i].inside = false;
@@ -124,6 +174,8 @@ function update() {
                 // Move the ball back to the boundary to prevent it from getting stuck
                 balls[i].x = normalX * (R - balls[i].R);
                 balls[i].y = normalY * (R - balls[i].R);
+
+                Bounce(gamemode);
             }
         }
 
@@ -187,18 +239,65 @@ function draw() {
     context.restore();
 
     if(!start) {
+        fillText("Gamemode: " + gamemode, windowSizeX/2 - 130, 10, 40, "arial", "white");
         transparent(70);
         fillRect(windowSizeX/2 - 386, windowSizeY/2 - 56, 774, 102, "black");
         transparent(100);
         fillText("Press SPACE to START", windowSizeX/2 - 370, windowSizeY/2 - 35, 70, "arial", "white");
+    } else {
+        fillText(titles[gamemode - 1], 0, 10, 50, "arial", "white");
+        switch(gamemode) {
+            case 1:
+                fillText("Balls: " + balls.length, 0, 60, 40, "arial", "white");
+            break;
+            case 2:
+                fillText("Bounces: " + bounces, 0, 60, 40, "arial", "white");
+            break;
+            case 3:
+                fillText("Bounces: " + bounces, 0, 60, 40, "arial", "white");
+            break;
+            default:
+            break;
+        }
     }
 }
 
+function Bounce(gamemode) {
+    switch(gamemode) {
+        case 1:
+        break;
+        case 2:
+            balls[0].R += 1;
+        break;
+        case 3:
+            balls[0].R -= 1;
+        break;
+        default:
+        break;
+    }
+
+    bounces++;
+}
+
 function BallGoOut(options) {
-    SpawnBall(options.size*0.75);
-    SpawnBall(options.size*0.75);
+    switch(gamemode) {
+        case 1:
+            SpawnBall(options.size*0.90);
+            SpawnBall(options.size*0.90);
+        break;
+        case 2:
+        break;
+        case 3:
+        break;
+        default:
+        break;
+    }
 }
 
 function angle2points(x1, y1, x2, y2) {
     return Math.atan2(y1 - y2, x1 - x2);
+}
+
+function keyup(key) {
+    pressed = false;
 }
