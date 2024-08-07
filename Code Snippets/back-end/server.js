@@ -1,13 +1,10 @@
 const express = require("express");
 const app = express();
-const path = require("path");
-const fs = require("fs");
 const cors = require("cors");
 const mysql = require("mysql2");
 const bodyParser = require("body-parser");
 const session = require("express-session");
 const MySQLStore = require("express-mysql-session")(session);
-const isAuthenticated = require("./middleware/isAuthenticated");
 
 const PORT = 8080;
 
